@@ -71,7 +71,12 @@ print('Access Matheus')
 print('')
 senha = leiaSenha('Digite sua senha: ')
 print('')
+print('Etapa de verificação credencial de segurança concluida com sucesso.')
+print('Por favor verifique a credencial de autentificação de triplo fator.')
+print('')
 autenticacao = leiaAutenticacao('Digite sua autenticação: ')
+print('')
+print('Etapa de verificação credencial de autenticação concluida com sucesso.')
 print('')
 print('Bem vindo Matheus')
 print('')
@@ -165,12 +170,12 @@ while True:
 				real4 = float(3_020_387.7041)
 				real5 = float(2_622_968.26)
 				real6 = float(2_305_032.72)
-				saldo1 = float(276.51265865185627)  # paxg
-				saldo2 = float(293.7946994099193)  # paxg
+				saldo1 = float(276.51265865185)  # paxg
+				saldo2 = float(293.79469940991)  # paxg
 				saldo3 = float(311.67412551236)  # paxg
-				saldo4 = float(328.35878201318667)  # paxg
-				saldo5 = float(508_228.49662778346)  # USDT
-				saldo6 = float(446_625.37828214)  # USDT
+				saldo4 = float(328.35878201318)  # paxg
+				saldo5 = float(508_228.49662)  # USDT
+				saldo6 = float(446_625.37828)  # USDT
 
 				la1 = ''.join(random.SystemRandom().choices(string.ascii_letters, k=1))
 				la2 = ''.join(random.SystemRandom().choices(string.ascii_letters, k=1))
@@ -206,12 +211,12 @@ while True:
 
 				ta3 = 160-(ta1+ta2)
 
-				al1 = (100 * real1) / total
-				al2 = (100 * real2) / total
-				al3 = (100 * real3) / total
-				al4 = (100 * real4) / total
-				al5 = (100 * real5) / total
-				al6 = (100 * real6) / total
+				al1 = round((100 * real1) / total,3)
+				al2 = round((100 * real2) / total,3)
+				al3 = round((100 * real3) / total,3)
+				al4 = round((100 * real4) / total,3)
+				al5 = round((100 * real5) / total,3)
+				al6 = round((100 * real6) / total,3)
 
 				if ncarteira == 1:
 					print(
@@ -255,18 +260,20 @@ while True:
 								al4 = (100 * real4) / total
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
 								al5 = (100 * real5) / total
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
 								al6 = (100 * real6) / total
 
-							for c in range(1,ta1):
+							for c in range(1,2):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 								time.sleep(1.5)
-							for c in range(1,ta2):
+							for c in range(1,2):
 								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 								time.sleep(1.5)
-							for c in range(1,ta3):
+							for c in range(1,2):
 								print('Confirmação de rede pendende (2/3): PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 								time.sleep(1.5)
 							print('Confirmação de rede pendende (3/3): PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
@@ -284,8 +291,9 @@ while True:
 							if destino == 6:
 								print('O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(saldo6, al6,na1,na2,na3,la1,na4,na5,na6,na7,na8,la2,la3))
 
+
 					else:
-						print('Transação cancelada')
+						print('Processo Finalizado')
 
 				if ncarteira == 2:
 					print(
@@ -294,269 +302,8 @@ while True:
 					print('')
 					transfer = str(input('Deseja movimentar o circuito interno? '))
 					print('')
-					if transfer == 'sim'.upper().lower():
+					if transfer == 'não'.upper().lower() or transfer == 'nao'.upper().lower():
 						print('')
-						valor = float(input('Qualifique a tranferencia: '))
-						print('')
-						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927, 0.001856])
-						print('')
-						confirmar = leiaCriptografia(
-							'''		
-                        O valor de taxa de é {} PAXG.
-                        ERC-20 Transaction: Tax pending.
-                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-                        ID: {}{}{}{}{}{}{}{}{}-{}{}
-                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-						if confirmar == 'sim'.upper().lower().strip():
-							if destino == 1:
-								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
-							if destino == 2:
-								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
-							if destino == 3:
-								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
-							if destino == 4:
-								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
-							if destino == 5:
-								saldo5 = saldo5 + valor - taxa
-								al5 = (100 * real5) / total
-							if destino == 6:
-								saldo6 = saldo6 + valor - taxa
-								al6 = (100 * real6) / total
-
-							for c in range(1, ta1):
-								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta2):
-								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta3):
-								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
-							if destino == 1:
-								print(
-									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 2:
-								print(
-									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 3:
-								print(
-									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 4:
-								print(
-									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 5:
-								print(
-									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 6:
-								print(
-									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-
-					else:
-						print('Transação cancelada')
-
-				if ncarteira == 3:
-					print(
-						'Criptomoeda: Paxos Gold (PAXG), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%'.format(
-							saldo3, al3))
-					print('')
-					transfer = str(input('Deseja movimentar o circuito interno? '))
-					print('')
-					if transfer == 'sim'.upper().lower():
-						print('')
-						valor = float(input('Qualifique a tranferencia: '))
-						print('')
-						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						print('')
-						confirmar = leiaCriptografia(
-							'''		
-                        O valor de taxa de é {} PAXG.
-                        ERC-20 Transaction: Tax pending.
-                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-                        ID: {}{}{}{}{}{}{}{}{}-{}{}
-                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,la3))
-						if confirmar == 'sim'.upper().lower().strip():
-							if destino == 1:
-								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
-							if destino == 2:
-								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
-							if destino == 3:
-								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
-							if destino == 4:
-								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
-							if destino == 5:
-								saldo5 = saldo5 + valor - taxa
-								al5 = (100 * real5) / total
-							if destino == 6:
-								saldo6 = saldo6 + valor - taxa
-								al6 = (100 * real6) / total
-
-							for c in range(1, ta1):
-								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta2):
-								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta3):
-								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
-							if destino == 1:
-								print(
-									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 2:
-								print(
-									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 3:
-								print(
-									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 4:
-								print(
-									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 5:
-								print(
-									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 6:
-								print(
-									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-
-					else:
-						print('Transação cancelada')
-
-				if ncarteira == 4:
-					print(
-						'Criptomoeda: Paxos Gold (PAXG), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%'.format(
-							saldo4, al4))
-					print('')
-					transfer = str(input('Deseja movimentar o circuito interno? '))
-					print('')
-					if transfer == 'sim'.upper().lower():
-						print('')
-						valor = float(input('Qualifique a tranferencia: '))
-						print('')
-						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						print('')
-						confirmar = leiaCriptografia(
-							'''		
-                        O valor de taxa de é {} PAXG.
-                        ERC-20 Transaction: Tax pending.
-                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-                        ID: {}{}{}{}{}{}{}{}{}-{}{}
-                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,la3))
-						if confirmar == 'sim'.upper().lower().strip():
-							if destino == 1:
-								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
-							if destino == 2:
-								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
-							if destino == 3:
-								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
-							if destino == 4:
-								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
-							if destino == 5:
-								saldo5 = saldo5 + valor - taxa
-								al5 = (100 * real5) / total
-							if destino == 6:
-								saldo6 = saldo6 + valor - taxa
-								al6 = (100 * real6) / total
-
-							for c in range(1, ta1):
-								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta2):
-								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							for c in range(1, ta3):
-								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-								time.sleep(1.5)
-							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
-							if destino == 1:
-								print(
-									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 2:
-								print(
-									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 3:
-								print(
-									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 4:
-								print(
-									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 5:
-								print(
-									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-							if destino == 6:
-								print(
-									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-
-					else:
-						print('Transação cancelada')
-
-				if ncarteira == 5:
-					print(
-						'Criptomoeda: Theter (USDT), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%'.format(
-							saldo5, al5))
-					print('')
-					transfer = str(input('Deseja movimentar o circuito interno? '))
-					print('')
 					if transfer == 'sim'.upper().lower():
 						print('')
 						valor = float(input('Qualifique a tranferencia: '))
@@ -591,9 +338,11 @@ while True:
 								al4 = (100 * real4) / total
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
 								al5 = (100 * real5) / total
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
 								al6 = (100 * real6) / total
 
 							for c in range(1, ta1):
@@ -637,15 +386,17 @@ while True:
 										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 
 					else:
-						print('Transação cancelada')
+						print('Processo Finalizado')
 
-				if ncarteira == 6:
+				if ncarteira == 3:
 					print(
-						'Criptomoeda: Theter (USDT), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%'.format(
-							saldo6, al6))
+						'Criptomoeda: Paxos Gold (PAXG), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%'.format(
+							saldo3, al3))
 					print('')
 					transfer = str(input('Deseja movimentar o circuito interno? '))
 					print('')
+					if transfer == 'não'.upper().lower() or transfer == 'nao'.upper().lower():
+						print('')
 					if transfer == 'sim'.upper().lower():
 						print('')
 						valor = float(input('Qualifique a tranferencia: '))
@@ -663,7 +414,8 @@ while True:
                         ERC-20 Transaction: Tax pending.
                         Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                         ID: {}{}{}{}{}{}{}{}{}-{}{}
-                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,la3))
+                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
@@ -679,9 +431,11 @@ while True:
 								al4 = (100 * real4) / total
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
 								al5 = (100 * real5) / total
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
 								al6 = (100 * real6) / total
 
 							for c in range(1, ta1):
@@ -723,6 +477,282 @@ while True:
 								print(
 									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
 										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-
 					else:
-						print('Transação cancelada')
+						print('Processo Finalizado')
+
+				if ncarteira == 4:
+					print(
+						'Criptomoeda: Paxos Gold (PAXG), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%'.format(
+							saldo4, al4))
+					print('')
+					transfer = str(input('Deseja movimentar o circuito interno? '))
+					print('')
+					if transfer == 'não'.upper().lower() or transfer == 'nao'.upper().lower():
+						print('')
+					if transfer == 'sim'.upper().lower():
+						print('')
+						valor = float(input('Qualifique a tranferencia: '))
+						print('')
+						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
+						taxa = random.choice(
+							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+							 0.001904,
+							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+							 0.001856])
+						print('')
+						confirmar = leiaCriptografia(
+							'''		
+                        O valor de taxa de é {} PAXG.
+                        ERC-20 Transaction: Tax pending.
+                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                        ID: {}{}{}{}{}{}{}{}{}-{}{}
+                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+															  la3))
+						if confirmar == 'sim'.upper().lower().strip():
+							if destino == 1:
+								saldo1 = saldo1 + valor - taxa
+								al1 = (100 * real1) / total
+							if destino == 2:
+								saldo2 = saldo2 + valor - taxa
+								al2 = (100 * real2) / total
+							if destino == 3:
+								saldo3 = saldo3 + valor - taxa
+								al3 = (100 * real3) / total
+							if destino == 4:
+								saldo4 = saldo4 + valor - taxa
+								al4 = (100 * real4) / total
+							if destino == 5:
+								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
+								al5 = (100 * real5) / total
+							if destino == 6:
+								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
+								al6 = (100 * real6) / total
+
+
+							for c in range(1, ta1):
+								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta2):
+								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta3):
+								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+
+							if destino == 1:
+								print(
+									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 2:
+								print(
+									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 3:
+								print(
+									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 4:
+								print(
+									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 5:
+								print(
+									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 6:
+								print(
+									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+					else:
+						print('Processo Finalizado')
+
+				if ncarteira == 5:
+					print(
+						'Criptomoeda: Theter (USDT), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%'.format(
+							saldo5, al5))
+					print('')
+					transfer = str(input('Deseja movimentar o circuito interno? '))
+					print('')
+					if transfer == 'não'.upper().lower() or transfer == 'nao'.upper().lower():
+						print('')
+					if transfer == 'sim'.upper().lower():
+						print('')
+						valor = float(input('Qualifique a tranferencia: '))
+						print('')
+						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
+						taxa = random.choice(
+							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+							 0.001904,
+							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+							 0.001856])
+						print('')
+						confirmar = leiaCriptografia(
+							'''		
+                        O valor de taxa de é {} PAXG.
+                        ERC-20 Transaction: Tax pending.
+                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                        ID: {}{}{}{}{}{}{}{}{}-{}{}
+                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+															  la3))
+						if confirmar == 'sim'.upper().lower().strip():
+							if destino == 1:
+								saldo1 = saldo1 + valor - taxa
+								al1 = (100 * real1) / total
+							if destino == 2:
+								saldo2 = saldo2 + valor - taxa
+								al2 = (100 * real2) / total
+							if destino == 3:
+								saldo3 = saldo3 + valor - taxa
+								al3 = (100 * real3) / total
+							if destino == 4:
+								saldo4 = saldo4 + valor - taxa
+								al4 = (100 * real4) / total
+							if destino == 5:
+								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
+								al5 = (100 * real5) / total
+							if destino == 6:
+								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
+								al6 = (100 * real6) / total
+
+							for c in range(1, ta1):
+								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta2):
+								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta3):
+								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+
+							if destino == 1:
+								print(
+									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 2:
+								print(
+									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 3:
+								print(
+									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 4:
+								print(
+									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 5:
+								print(
+									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 6:
+								print(
+									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+					else:
+						print('Processo Finalizado')
+
+				if ncarteira == 6:
+					print(
+						'Criptomoeda: Theter (USDT), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%'.format(
+							saldo6, al6))
+					print('')
+					transfer = str(input('Deseja movimentar o circuito interno? '))
+					print('')
+					if transfer == 'não'.upper().lower() or transfer == 'nao'.upper().lower():
+						print('')
+					if transfer == 'sim'.upper().lower():
+						print('')
+						valor = float(input('Qualifique a tranferencia: '))
+						print('')
+						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
+						taxa = random.choice(
+							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+							 0.001904,
+							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+							 0.001856])
+						print('')
+						confirmar = leiaCriptografia(
+							'''		
+                        O valor de taxa de é {} PAXG.
+                        ERC-20 Transaction: Tax pending.
+                        Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                        ID: {}{}{}{}{}{}{}{}{}-{}{}
+                        Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+															  la3))
+						if confirmar == 'sim'.upper().lower().strip():
+							if destino == 1:
+								saldo1 = saldo1 + valor - taxa
+								al1 = (100 * real1) / total
+							if destino == 2:
+								saldo2 = saldo2 + valor - taxa
+								al2 = (100 * real2) / total
+							if destino == 3:
+								saldo3 = saldo3 + valor - taxa
+								al3 = (100 * real3) / total
+							if destino == 4:
+								saldo4 = saldo4 + valor - taxa
+								al4 = (100 * real4) / total
+							if destino == 5:
+								saldo5 = saldo5 + valor - taxa
+								saldo5 = round(saldo5, 5)
+								al5 = (100 * real5) / total
+							if destino == 6:
+								saldo6 = saldo6 + valor - taxa
+								saldo6 = round(saldo6, 5)
+								al6 = (100 * real6) / total
+
+							for c in range(1, ta1):
+								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta2):
+								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							for c in range(1, ta3):
+								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+								time.sleep(1.5)
+							print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+								  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+
+							if destino == 1:
+								print(
+									'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 2:
+								print(
+									'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 3:
+								print(
+									'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 4:
+								print(
+									'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 5:
+								print(
+									'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+							if destino == 6:
+								print(
+									'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+										saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+					else:
+						print('Processo Finalizado')
