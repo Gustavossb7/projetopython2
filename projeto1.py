@@ -81,6 +81,12 @@ print('')
 print('Bem vindo Matheus')
 print('')
 
+saldo1 = float(276.51265865185)  # paxg
+saldo2 = float(293.79469940991)  # paxg
+saldo3 = float(311.67412551236)  # paxg
+saldo4 = float(328.35878201318)  # paxg
+saldo5 = float(508_228.49662)  # USDT
+saldo6 = float(446_625.37828)  # USDT
 
 while True:
 	print('')
@@ -164,18 +170,21 @@ while True:
 				print('')
 
 				total = float(15_896_777.39)
-				real1 = float(2_543_484.38)
-				real2 = float(2_702_452.1563)
-				real3 = float(2_861_419.9302)
-				real4 = float(3_020_387.7041)
-				real5 = float(2_622_968.26)
-				real6 = float(2_305_032.72)
-				saldo1 = float(276.51265865185)  # paxg
-				saldo2 = float(293.79469940991)  # paxg
-				saldo3 = float(311.67412551236)  # paxg
-				saldo4 = float(328.35878201318)  # paxg
-				saldo5 = float(508_228.49662)  # USDT
-				saldo6 = float(446_625.37828)  # USDT
+				# real1 = float(2_543_484.38)
+				# real2 = float(2_702_452.1563)
+				# real3 = float(2_861_419.9302)
+				# real4 = float(3_020_387.7041)
+				# real5 = float(2_622_968.26)
+				# real6 = float(2_305_032.72)
+
+
+
+				real1 = float(saldo1 * 9097.38)
+				real2 = float(saldo2 * 9097.38)
+				real3 = float(saldo3 * 9097.38)
+				real4 = float(saldo4 * 9097.38)
+				real5 = float(saldo5 * 5.07)
+				real6 = float(saldo6 * 5.07)
 
 				la1 = ''.join(random.SystemRandom().choices(string.ascii_letters, k=1))
 				la2 = ''.join(random.SystemRandom().choices(string.ascii_letters, k=1))
@@ -218,6 +227,7 @@ while True:
 				al5 = round((100 * real5) / total,3)
 				al6 = round((100 * real6) / total,3)
 
+
 				if ncarteira == 1:
 					print(
 						'Criptomoeda: Paxos Gold (PAXG), Quantidade: {}, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%'.format(
@@ -246,6 +256,7 @@ while True:
 						ID: {}{}{}{}{}{}{}{}{}-{}{}
 						Digite sim, para confirmar:'''.format(taxa,na1,na2,na3,la1,na4,na5,na6,na7,na8,la2,la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo1 = saldo1 -valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
@@ -324,6 +335,7 @@ while True:
                         Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo2 = saldo2 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
@@ -417,6 +429,7 @@ while True:
                         Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo3 = saldo3 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
@@ -509,6 +522,7 @@ while True:
                         Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo4 = saldo4 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
@@ -602,6 +616,7 @@ while True:
                         Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo5 = saldo5 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
@@ -694,6 +709,7 @@ while True:
                         Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 															  la3))
 						if confirmar == 'sim'.upper().lower().strip():
+							saldo6 = saldo6 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
 								al1 = (100 * real1) / total
