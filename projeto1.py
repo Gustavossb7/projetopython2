@@ -259,22 +259,28 @@ while True:
 							saldo1 = saldo1 -valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = (saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = (saldo2 * 9097.38)
 								al2 = round((100 * real2) / total,3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = (saldo3 * 9097.38)
 								al3 = round((100 * real3) / total,3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = (saldo4 * 9097.38)
 								al4 = round((100 * real4) / total,3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total,3)
 
@@ -338,22 +344,28 @@ while True:
 							saldo2 = saldo2 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = float(saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = float(saldo2 * 9097.38)
 								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = float(saldo3 * 9097.38)
 								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = float(saldo4 * 9097.38)
 								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total, 3)
 
@@ -432,22 +444,28 @@ while True:
 							saldo3 = saldo3 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = float(saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = float(saldo2 * 9097.38)
 								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = float(saldo3 * 9097.38)
 								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = float(saldo4 * 9097.38)
 								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total, 3)
 
@@ -525,22 +543,28 @@ while True:
 							saldo4 = saldo4 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = float(saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = float(saldo2 * 9097.38)
 								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = float(saldo3 * 9097.38)
 								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = float(saldo4 * 9097.38)
 								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total, 3)
 
@@ -619,34 +643,40 @@ while True:
 							saldo5 = saldo5 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = float(saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = float(saldo2 * 9097.38)
 								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = float(saldo3 * 9097.38)
 								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = float(saldo4 * 9097.38)
 								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total, 3)
 
-							for c in range(1, ta1):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
-							for c in range(1, ta2):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
-							for c in range(1, ta3):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
@@ -712,22 +742,28 @@ while True:
 							saldo6 = saldo6 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
+								real1 = float(saldo1 * 9097.38)
 								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
+								real2 = float(saldo2 * 9097.38)
 								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
+								real3 = float(saldo3 * 9097.38)
 								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
+								real4 = float(saldo4 * 9097.38)
 								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
+								real5 = (saldo5 * 5.07)
 								saldo5 = round(saldo5, 5)
 								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
+								real6 = (saldo6 * 5.07)
 								saldo6 = round(saldo6, 5)
 								al6 = round((100 * real6) / total, 3)
 
