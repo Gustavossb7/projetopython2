@@ -259,24 +259,24 @@ while True:
 							saldo1 = saldo1 -valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total,3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total,3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total,3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total,3)
 
 							for c in range(1,2):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
@@ -338,34 +338,34 @@ while True:
 							saldo2 = saldo2 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total, 3)
 
-							for c in range(1, ta1):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
-							for c in range(1, ta2):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
-							for c in range(1, ta3):
+							for c in range(1, 2):
 								print('Confirmação de rede pendende (2/3): PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 								time.sleep(1.5)
@@ -432,24 +432,24 @@ while True:
 							saldo3 = saldo3 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total, 3)
 
 							for c in range(1, ta1):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
@@ -525,24 +525,24 @@ while True:
 							saldo4 = saldo4 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total, 3)
 
 
 							for c in range(1, ta1):
@@ -619,24 +619,24 @@ while True:
 							saldo5 = saldo5 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total, 3)
 
 							for c in range(1, ta1):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
@@ -712,24 +712,24 @@ while True:
 							saldo6 = saldo6 - valor
 							if destino == 1:
 								saldo1 = saldo1 + valor - taxa
-								al1 = (100 * real1) / total
+								al1 = round((100 * real1) / total, 3)
 							if destino == 2:
 								saldo2 = saldo2 + valor - taxa
-								al2 = (100 * real2) / total
+								al2 = round((100 * real2) / total, 3)
 							if destino == 3:
 								saldo3 = saldo3 + valor - taxa
-								al3 = (100 * real3) / total
+								al3 = round((100 * real3) / total, 3)
 							if destino == 4:
 								saldo4 = saldo4 + valor - taxa
-								al4 = (100 * real4) / total
+								al4 = round((100 * real4) / total, 3)
 							if destino == 5:
 								saldo5 = saldo5 + valor - taxa
 								saldo5 = round(saldo5, 5)
-								al5 = (100 * real5) / total
+								al5 = round((100 * real5) / total, 3)
 							if destino == 6:
 								saldo6 = saldo6 + valor - taxa
 								saldo6 = round(saldo6, 5)
-								al6 = (100 * real6) / total
+								al6 = round((100 * real6) / total, 3)
 
 							for c in range(1, ta1):
 								print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
