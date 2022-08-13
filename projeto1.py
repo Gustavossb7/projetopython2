@@ -246,12 +246,27 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2=taxa*10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2=taxa*10
+						taxaPaxg = random.choice(
+							[0.00098869808, 0.000860438248, 0.000332286556, 0.000229802845, 0.000451243811,
+							 0.000223358254, 0.001666435356, 0.00192716402, 0.005312830272, 0.007470163288])
+
+						taxaPaxg2 = random.choice(
+							[0.014144054453, 0.017594981639, 0.019175284100, 0.025124769641, 0.026274362743,
+							 0.021119023841, 0.022372391771, 0.039284750228, 0.030672705062, 0.037388547043])
+
+						taxaUsdt = random.choice(
+							[1.77289, 3.86556, 4.29802, 11.11901, 7.01632, 9.144054, 6.00988, 1.39284, 8.85470,
+							 13.39448])
+
+						taxaUsdt2 = random.choice(
+							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
+							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
 							confirmar = leiaCriptografia(
@@ -261,60 +276,59 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,
+                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,
 																  la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo1 = saldo1 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = (saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = (saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = (saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = (saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
-									for c in range(1, 4):
+									for c in range(1, 60):
 										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
-									for c in range(1, 4):
+									for c in range(1, 60):
 										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 
-								for c in range(1, 1):
+								for c in range(1, ta1):
 									print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 									time.sleep(1.5)
-								for c in range(1, 2):
+								for c in range(1, ta2):
 									print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
 										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 									time.sleep(1.5)
-								for c in range(1, 3):
+								for c in range(1, ta3):
 									print('Confirmação de rede pendende (2/3): PROTOCOLO -',
 										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 									time.sleep(1.5)
 								print('Confirmação de rede pendende (3/3): PROTOCOLO -',
 									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
 								if destino == 1:
 									print(
 										'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
@@ -335,7 +349,7 @@ while True:
 									print(
 										'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
 											saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-									if destino == 6:
+								if destino == 6:
 										print(
 											'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
 												saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
@@ -347,27 +361,27 @@ while True:
 							ERC-20 Transaction: Tax pending.
 							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxa,na1,na2,na3,la1,na4,na5,na6,na7,na8,la2,la3))
+							Digite sim, para confirmar:'''.format(taxaPaxg,na1,na2,na3,la1,na4,na5,na6,na7,na8,la2,la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo1 = saldo1 -valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = (saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = (saldo2 * 9097.38)
 									al2 = round((100 * real2) / total,3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = (saldo3 * 9097.38)
 									al3 = round((100 * real3) / total,3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = (saldo4 * 9097.38)
 									al4 = round((100 * real4) / total,3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor*1794) - taxa2
+									saldo5 = saldo5 + (valor*1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -376,7 +390,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor*1794) - taxa2
+									saldo6 = saldo6 + (valor*1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total,3)
@@ -427,12 +441,27 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2 = taxa * 10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2 = taxa * 10
+						taxaPaxg = random.choice(
+							[0.00098869808, 0.000860438248, 0.000332286556, 0.000229802845, 0.000451243811,
+							 0.000223358254, 0.001666435356, 0.00192716402, 0.005312830272, 0.007470163288])
+
+						taxaPaxg2 = random.choice(
+							[0.014144054453, 0.017594981639, 0.019175284100, 0.025124769641, 0.026274362743,
+							 0.021119023841, 0.022372391771, 0.039284750228, 0.030672705062, 0.037388547043])
+
+						taxaUsdt = random.choice(
+							[1.77289, 3.86556, 4.29802, 11.11901, 7.01632, 9.144054, 6.00988, 1.39284, 8.85470,
+							 13.39448])
+
+						taxaUsdt2 = random.choice(
+							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
+							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
 							confirmar = leiaCriptografia(
@@ -442,27 +471,27 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo2 = saldo2 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -471,7 +500,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -527,28 +556,28 @@ while True:
 							ERC-20 Transaction: Tax pending.
 							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 																  la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo2 = saldo2 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -557,7 +586,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -623,12 +652,27 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2 = taxa * 10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2 = taxa * 10
+						taxaPaxg = random.choice(
+							[0.00098869808, 0.000860438248, 0.000332286556, 0.000229802845, 0.000451243811,
+							 0.000223358254, 0.001666435356, 0.00192716402, 0.005312830272, 0.007470163288])
+
+						taxaPaxg2 = random.choice(
+							[0.014144054453, 0.017594981639, 0.019175284100, 0.025124769641, 0.026274362743,
+							 0.021119023841, 0.022372391771, 0.039284750228, 0.030672705062, 0.037388547043])
+
+						taxaUsdt = random.choice(
+							[1.77289, 3.86556, 4.29802, 11.11901, 7.01632, 9.144054, 6.00988, 1.39284, 8.85470,
+							 13.39448])
+
+						taxaUsdt2 = random.choice(
+							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
+							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
 							confirmar = leiaCriptografia(
@@ -638,27 +682,27 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo3 = saldo3 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -667,7 +711,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -722,28 +766,28 @@ while True:
 							ERC-20 Transaction: Tax pending.
 							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 																  la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo3 = saldo3 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -752,7 +796,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -817,12 +861,19 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2 = taxa * 10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2 = taxa * 10
+						taxaPaxg = random.choice(
+							[0.00098869808, 0.000860438248, 0.000332286556, 0.000229802845, 0.000451243811,
+							 0.000223358254, 0.001666435356, 0.00192716402, 0.005312830272, 0.007470163288])
+
+						taxaPaxg2 = random.choice(
+							[0.014144054453, 0.017594981639, 0.019175284100, 0.025124769641, 0.026274362743,
+							 0.021119023841, 0.022372391771, 0.039284750228, 0.030672705062, 0.037388547043])
 						print('')
 						if destino == 5 or destino == 6:
 							confirmar = leiaCriptografia(
@@ -832,27 +883,27 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo4 = saldo4 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									print('')
 									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
 									print('')
@@ -864,7 +915,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									print('')
 									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
 									print('')
@@ -923,28 +974,28 @@ while True:
 							ERC-20 Transaction: Tax pending.
 							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 																  la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo4 = saldo4 - valor
 								if destino == 1:
-									saldo1 = saldo1 + valor - taxa
+									saldo1 = saldo1 + valor - taxaPaxg
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 								if destino == 2:
-									saldo2 = saldo2 + valor - taxa
+									saldo2 = saldo2 + valor - taxaPaxg
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaPaxg
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaPaxg
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxa2
+									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
 									print('')
 									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
 									print('')
@@ -956,7 +1007,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxa2
+									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
 									print('')
 									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
 									print('')
@@ -1025,12 +1076,19 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2 = taxa * 10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2 = taxa * 10
+						taxaUsdt = random.choice(
+							[1.77289, 3.86556, 4.29802, 11.11901, 7.01632, 9.144054, 6.00988, 1.39284, 8.85470,
+							 13.39448])
+
+						taxaUsdt2 = random.choice(
+							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
+							 67.16942])
 						print('')
 						if destino == 1 or destino == 2:
 							confirmar = leiaCriptografia(
@@ -1040,11 +1098,11 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            Digite sim, para confirmar:'''.format(taxaUsdt2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo5 = saldo5 - valor
 								if destino == 1:
-									saldo1 = saldo1 + (valor / 1794) - taxa2
+									saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
 									print('')
 									print(
 										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
@@ -1056,7 +1114,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 2:
-									saldo2 = saldo2 + (valor / 1794) - taxa2
+									saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
 									print('')
 									print(
 										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
@@ -1068,20 +1126,20 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaUsdt
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaUsdt
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + valor - taxa
+									saldo5 = saldo5 + valor - taxaUsdt
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
 								if destino == 6:
-									saldo6 = saldo6 + valor - taxa
+									saldo6 = saldo6 + valor - taxaUsdt
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -1132,12 +1190,12 @@ while True:
 									ERC-20 Transaction: Tax pending.
 									Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 									ID: {}{}{}{}{}{}{}{}{}-{}{}
-									Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+									Digite sim, para confirmar:'''.format(taxaUsdt, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 																	  la3))
 							if confirmar == 'sim'.upper().lower().strip():
 									saldo5 = saldo5 - valor
 									if destino == 1:
-										saldo1 = saldo1 + (valor/1794) - taxa2
+										saldo1 = saldo1 + (valor/1794) - taxaUsdt2
 										real1 = float(saldo1 * 9097.38)
 										al1 = round((100 * real1) / total, 3)
 										for c in range(1, 60):
@@ -1145,7 +1203,7 @@ while True:
 												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 											time.sleep(1.5)
 									if destino == 2:
-										saldo2 = saldo2 + (valor/1794) - taxa2
+										saldo2 = saldo2 + (valor/1794) - taxaUsdt2
 										real2 = float(saldo2 * 9097.38)
 										al2 = round((100 * real2) / total, 3)
 										for c in range(1, 60):
@@ -1153,20 +1211,20 @@ while True:
 												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 											time.sleep(1.5)
 									if destino == 3:
-										saldo3 = saldo3 + valor - taxa
+										saldo3 = saldo3 + valor - taxaUsdt
 										real3 = float(saldo3 * 9097.38)
 										al3 = round((100 * real3) / total, 3)
 									if destino == 4:
-										saldo4 = saldo4 + valor - taxa
+										saldo4 = saldo4 + valor - taxaUsdt
 										real4 = float(saldo4 * 9097.38)
 										al4 = round((100 * real4) / total, 3)
 									if destino == 5:
-										saldo5 = saldo5 + valor - taxa
+										saldo5 = saldo5 + valor - taxaUsdt
 										real5 = (saldo5 * 5.07)
 										saldo5 = round(saldo5, 5)
 										al5 = round((100 * real5) / total, 3)
 									if destino == 6:
-										saldo6 = saldo6 + valor - taxa
+										saldo6 = saldo6 + valor - taxaUsdt
 										real6 = (saldo6 * 5.07)
 										saldo6 = round(saldo6, 5)
 										al6 = round((100 * real6) / total, 3)
@@ -1226,12 +1284,19 @@ while True:
 						valor = float(input('Qualifique a tranferencia: '))
 						print('')
 						destino = leiaNcarteira('Qual a carteira de destino? (digite o número da carteira): ')
-						taxa = random.choice(
-							[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
-							 0.001904,
-							 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
-							 0.001856])
-						taxa2 = taxa * 10
+						# taxa = random.choice(
+						# 	[0.001562, 0.002604, 0.002322, 0.002298, 0.002512, 0.002233, 0.001666, 0.001732, 0.001878,
+						# 	 0.001904,
+						# 	 0.002043, 0.002179, 0.002417, 0.002471, 0.002438, 0.001763, 0.001589, 0.001622, 0.001927,
+						# 	 0.001856])
+						# taxa2 = taxa * 10
+						taxaUsdt = random.choice(
+							[1.77289, 3.86556, 4.29802, 11.11901, 7.01632, 9.144054, 6.00988, 1.39284, 8.85470,
+							 13.39448])
+
+						taxaUsdt2 = random.choice(
+							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
+							 67.16942])
 						print('')
 						if destino == 1 or destino == 2:
 							confirmar = leiaCriptografia(
@@ -1241,11 +1306,11 @@ while True:
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
                             ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxa2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            Digite sim, para confirmar:'''.format(taxaUsdt2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo6 = saldo6 - valor
 								if destino == 1:
-									saldo1 = saldo1 + (valor / 1794) - taxa2
+									saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 									for c in range(1, 60):
@@ -1253,7 +1318,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 2:
-									saldo2 = saldo2 + (valor / 1794) - taxa2
+									saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
 									print('')
 									print(
 										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
@@ -1265,20 +1330,20 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaUsdt
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaUsdt
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + valor - taxa
+									saldo5 = saldo5 + valor - taxaUsdt
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
 								if destino == 6:
-									saldo6 = saldo6 + valor - taxa
+									saldo6 = saldo6 + valor - taxaUsdt
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -1329,15 +1394,12 @@ while True:
 							ERC-20 Transaction: Tax pending.
 							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
 							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxa, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+							Digite sim, para confirmar:'''.format(taxaUsdt, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
 																  la3))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo6 = saldo6 - valor
 								if destino == 1:
-									saldo1 = saldo1 + (valor / 1794) - taxa2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
+									saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 									for c in range(1, 60):
@@ -1345,10 +1407,7 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 2:
-									saldo2 = saldo2 + (valor / 1794) - taxa2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
+									saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 									for c in range(1, 60):
@@ -1356,20 +1415,20 @@ while True:
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 								if destino == 3:
-									saldo3 = saldo3 + valor - taxa
+									saldo3 = saldo3 + valor - taxaUsdt
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
 								if destino == 4:
-									saldo4 = saldo4 + valor - taxa
+									saldo4 = saldo4 + valor - taxaUsdt
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
-									saldo5 = saldo5 + valor - taxa
+									saldo5 = saldo5 + valor - taxaUsdt
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
 								if destino == 6:
-									saldo6 = saldo6 + valor - taxa
+									saldo6 = saldo6 + valor - taxaUsdt
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
