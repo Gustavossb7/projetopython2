@@ -2,6 +2,7 @@ import time
 import random
 import string
 import math
+from selenium import webdriver
 
 
 
@@ -37,7 +38,7 @@ def leiaOpcao(msg):
 	ok = False
 	while True:
 		opcao = int(input(msg))
-		if opcao == 1 or opcao == 2 :
+		if opcao == 1 or opcao == 2 or opcao == 3 or opcao == 4 or opcao == 5 or opcao == 6:
 			ok = True
 		else:
 			print('\033[0;31mERRO! Digite uma opção válida\033[m')
@@ -68,6 +69,50 @@ def leiaNcarteira(msg):
 		if ok:
 			break
 	return ncarteira
+
+def criptografia(msg):
+	tradutor=""
+	for letra in msg:
+		if letra in "Aa" : tradutor = tradutor + "H"
+		elif letra in "Bb" : tradutor = tradutor + "H"
+		elif letra in "Cc": tradutor = tradutor + "?"
+		elif letra in "Dd": tradutor = tradutor + "/"
+		elif letra in "Ee": tradutor = tradutor + "z"
+		elif letra in "Ff": tradutor = tradutor + "g"
+		elif letra in "Gg": tradutor = tradutor + "A"
+		elif letra in "Hh": tradutor = tradutor + "L"
+		elif letra in "Ii": tradutor = tradutor + "<H>"
+		elif letra in "Jj": tradutor = tradutor + "-"
+		elif letra in "Kk": tradutor = tradutor + "´"
+		elif letra in "Ll": tradutor = tradutor + "J"
+		elif letra in "Mm": tradutor = tradutor + "j"
+		elif letra in "Nn": tradutor = tradutor + "wW"
+		elif letra in "Oo": tradutor = tradutor + "9!"
+		elif letra in "Pp": tradutor = tradutor + "P"
+		elif letra in "Qq": tradutor = tradutor + "r"
+		elif letra in "Rr": tradutor = tradutor + "r"
+		elif letra in "Ss": tradutor = tradutor + "r"
+		elif letra in "Tt": tradutor = tradutor + "ah"
+		elif letra in "Uu": tradutor = tradutor + "["
+		elif letra in "Vv": tradutor = tradutor + "+"
+		elif letra in "Ww": tradutor = tradutor + "ll"
+		elif letra in "Xx": tradutor = tradutor + "D"
+		elif letra in "Yy": tradutor = tradutor + "Y"
+		elif letra in "Zz": tradutor = tradutor + "i"
+		elif letra in "1":tradutor = tradutor + "gI-"
+		elif letra in "2": tradutor = tradutor + "Ç"
+		elif letra in "3": tradutor = tradutor + "]"
+		elif letra in "4": tradutor = tradutor + "1"
+		elif letra in "5": tradutor = tradutor + "_"
+		elif letra in "6": tradutor = tradutor + ":)"
+		elif letra in "7": tradutor = tradutor + ":("
+		elif letra in "8": tradutor = tradutor + ":):"
+		elif letra in "9": tradutor = tradutor + "^"
+		else: tradutor = tradutor + letra
+	return tradutor
+
+
+
 
 print('')
 print('Access Matheus')
@@ -1474,3 +1519,203 @@ while True:
 											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 					else:
 						print('Processo Finalizado')
+
+	#informações criptografia
+	if opcao == 3:
+		print("")
+		print("Informações de criptografia: ")
+		print("")
+		print("")
+		print("")
+		print("")
+		print("O sistema possui capacidade de encriptografamento de padrão Advanced Encryption Standard (AES) ")
+		print("")
+		print('''
+Possuimos uma criptografia assimétrica que possui HASHs de segurança, 
+e uma cifra de fluxo (stream cipher), pois é um dos melhores e mais 
+seguros protocolos de criptografia e é utilizado em incontáveis aplicações.''')
+		print("")
+		print("")
+		print('''
+A tecnologia utilizada na criptografia são protocolos Secure Socket Layer (SSL),
+hoje conhecido como Transport Layer Security (TLS), 
+Derivada do DES, a criptografia 3DES (ou Triplo DES).''')
+		print("")
+		print("")
+		criptousuario=str(input("Digite uma mensagem que gostaria que fosse encriptografada: "))
+		print("")
+		print("Sua mensagem encriptografada ficou: ")
+		print("")
+		print(criptografia(criptousuario))
+		print("")
+
+	# informações rede
+	if opcao == 4:
+			print("")
+			print("Informações de rede: ")
+			print("")
+			print("")
+			print("")
+			print("")
+			print("O sistema possui ID de rede classe dhcp e IPv6 permitidas para o adaptador ")
+			print("")
+			print('''
+Possuimos uma rede padrão que exibe apenas o endereço IP, a máscara de sub-rede e
+o gateway padrão para cada adaptador limitado ao TCP/IP.
+Para Release e Renew, se nenhum nome de adaptador for especificado,
+as concessões de endereços IP para todos os adaptadores limitados
+ao TCP/IP serão liberadas ou renovadas.
+
+Para Setclassid e Setclassid6, se nenhuma ClassId for especificada, ClassId
+será removida.''')
+			time.sleep(1.5)
+			print("")
+			print("")
+			print('''
+Nome do host. . . . . . . . . . . . . . . . : DESKTOP-F2UG63E
+   Sufixo DNS primário . . . . . . . . . . . . :
+   Tipo de nó. . . . . . . . . . . . . . . . . : híbrido
+   Roteamento de IP ativado. . . . . . . . . . : não
+   Proxy WINS ativado. . . . . . . . . . . . . : não
+   Lista de pesquisa de sufixo DNS . . . . . . : virtua.com.br
+
+Adaptador Ethernet Ethernet:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+   Descrição . . . . . . . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Endereço Físico . . . . . . . . . . . . . . : A8-A1-59-79-9F-9F
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuração Automática Habilitada. . . . . : Sim
+
+Adaptador de Rede sem Fio Conexão Local* 9:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Endereço Físico . . . . . . . . . . . . . . : 2A-EE-52-BC-E0-C1
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuração Automática Habilitada. . . . . : Sim''')
+			time.sleep(2)
+			print('''
+Adaptador de Rede sem Fio Conexão Local* 10:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuração Automática Habilitada. . . . . : Sim
+
+Adaptador de Rede sem Fio Wi-Fi:
+
+   Sufixo DNS específico de conexão. . . . . . : virtua.com.br
+   Descrição . . . . . . . . . . . . . . . . . : TP-Link Wireless USB Adapter
+   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuração Automática Habilitada. . . . . : Sim
+   Endereço IPv6 . . . . . . . . . . : 2804:14d:4cd1:84a0::504a(Preferencial)
+   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:36
+   Concessão Expira. . . . . . . . . . . . . . : terça-feira, 16 de agosto de 2022 16:10:20
+   Endereço IPv6 de link local . . . . . . . . : fe80::858:6458:4e62:469%19(Preferencial)
+   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.219(Preferencial)
+   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:41
+   Concessão Expira. . . . . . . . . . . . . . : sábado, 13 de agosto de 2022 04:10:31
+   Gateway Padrão. . . . . . . . . . . . . . . : fe80::ce75:e2ff:fed8:4fca%19
+                                                 192.168.0.1
+   Servidor DHCP . . . . . . . . . . . . . . . : 192.168.0.1
+   IAID de DHCPv6. . . . . . . . . . . . . . . : 405335634
+   DUID de Cliente DHCPv6. . . . . . . . . . . : 00-01-00-01-2A-76-4F-9E-A8-A1-59-79-9F-9F
+   Servidores DNS. . . . . . . . . . . . . . . : 2804:14d:1:0:181:213:132:4
+                                                 2804:14d:1:0:181:213:132:5
+                                                 181.213.132.4
+                                                 181.213.132.5
+   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado''')
+			print("")
+			print("")
+
+	# informações protocolo de segurança
+	if opcao == 5:
+		print("")
+		print("Informações Protodolo de segurança: ")
+		print("")
+		print("")
+		print("")
+		print("")
+		print(
+			"O sistema possui segurança de encriptografamento de padrão Advanced Encryption Standard (AES), ID de rede classe dhcp, IPv6 permitidas para o adaptador com conexão segura e protocolos de segurança WEP e WPA")
+		print("")
+		print('''
+	Wired Equivalent Privacy  (Privacidade equivalente aos fios) WEP é um sistema de criptografia adotado pelo padrão IEEE 802.11. 
+	Ele utiliza uma senha compartilhada para criptografar os dados e funciona de forma estática. 
+	Além de fornecer apenas um controle de acesso e de privacidade de dados na rede sem fio.
+			''')
+		print("")
+		print("")
+		print('''
+	Wi-fi Protected Access  (Wi-Fi de acesso protegido) Também é conhecido como TKIP (Temporal Key Integrity Protocol). 
+	O recurso surgiu em 2003 para aumentar a segurança do protocolo WEP. O WPA2 é considerada a versão final o WPA. 
+	A principal diferença entre o WPA e o WPA2 é a forma com a qual ele criptografa os dados. 
+	Enquanto o WPA utiliza o TKIP como algoritmo de criptografia, o WPA2 utiliza o algoritmo AES (Advanced Encryption Standard). 
+	O algoritmo AES é consideravelmente mais pesado que o TKIP. 
+	Por conta disso, as placas mais antigas não suportam o WPA2, nem com um firmware atualizado.
+	O AES é o padrão de criptografia utilizado''')
+		print("")
+		print("")
+
+
+	# if opcao == 6:
+	# 	print("")
+	# 	print("")
+	# 	print("")
+	# 	print("")
+	# 	print("A aplicação está consultando as cotações atuais...")
+	# 	print("")
+	# 
+	# 
+	# 	navegador = webdriver.Chrome()
+	# 	print("")
+	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
+	# 
+	# 
+	# 	print("")
+	# 	print("")
+	# 	cotacaoUSDT=navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+	# 	precoUSDT = navegador.find_element("xpath",'// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+	# 	marketcapUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+	# 	fullydilutedmarketcapUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+	# 	volume24hUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+	# 	print(precoUSDT.text)
+	# 	print (cotacaoUSDT.text)
+	# 	print("")
+	# 	print("Market Cap",   '         '    ,"Fully Diluted Market Cap", '     ' ,"Volume 24h")
+	# 	print(marketcapUSDT.text, '     '   , fullydilutedmarketcapUSDT.text, '     '    , volume24hUSDT.text)
+	# 	print("")
+	# 	print("")
+	# 	print("")
+	# 
+	# 	print('------------------------------')
+	# 	print("")
+	# 	print("")
+	# 
+	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
+	# 	cotacaoPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+	# 	precoPAXG = navegador.find_element("xpath",'// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+	# 	marketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+	# 	fullydilutedmarketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+	# 	volume24hPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+	# 
+	# 	print('Preço de PAX Gold (PAXG)')
+	# 	print(cotacaoPAXG.text)
+	# 	print("")
+	# 	print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
+	# 	print(marketcapPAXG.text, '     ', fullydilutedmarketcapPAXG.text, '            ', volume24hPAXG.text)
+	# 	print("")
+	# 	print("")
+	# 	print("")
+
+
+
+
+
