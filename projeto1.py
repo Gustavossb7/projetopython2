@@ -3,8 +3,6 @@ import random
 import string
 import math
 from selenium import webdriver
-import pyautogui
-
 
 
 
@@ -291,68 +289,72 @@ while True:
 
 
 	# cotação
-	# if opcao == 3:
-	# 		print("")
-	# 		print("")
-	# 		navegador = webdriver.Chrome()
-	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
-	# 		time.sleep(3)
-	# 		print("")
-	# 		print("")
-	# 		print("A aplicação está consultando as cotações atuais...")
-	# 		print("")
-	# 		options = webdriver.ChromeOptions()
-	# 		options.add_experimental_option('excludeSwitches', ['enable-logging'])
-	#
-	# 		navegador = webdriver.Chrome()
-	# 		print("")
-	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
-	#
-	# 		print("")
-	# 		print("")
-	# 		cotacaoUSDT = navegador.find_element("xpath",
-	# 											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
-	# 		precoUSDT = navegador.find_element("xpath",
-	# 										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
-	# 		marketcapUSDT = navegador.find_element("xpath",
-	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
-	# 		fullydilutedmarketcapUSDT = navegador.find_element("xpath",
-	# 														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
-	# 		volume24hUSDT = navegador.find_element("xpath",
-	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
-	# 		print(precoUSDT.text)
-	# 		print(cotacaoUSDT.text)
-	# 		print("")
-	# 		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
-	# 		print(marketcapUSDT.text, '     ', fullydilutedmarketcapUSDT.text, '     ', volume24hUSDT.text)
-	# 		print("")
-	# 		print("")
-	# 		print("")
-	#
-	# 		print('------------------------------')
-	# 		print("")
-	# 		print("")
-	#
-	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
-	# 		cotacaoPAXG = navegador.find_element("xpath",
-	# 											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
-	# 		precoPAXG = navegador.find_element("xpath",
-	# 										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
-	# 		marketcapPAXG = navegador.find_element("xpath",
-	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
-	# 		fullydilutedmarketcapPAXG = navegador.find_element("xpath",
-	# 														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
-	# 		volume24hPAXG = navegador.find_element("xpath",
-	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
-	#
-	# 		print('Preço de PAX Gold (PAXG)')
-	# 		print(cotacaoPAXG.text)
-	# 		print("")
-	# 		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
-	# 		print(marketcapPAXG.text, '     ', fullydilutedmarketcapPAXG.text, '            ', volume24hPAXG.text)
-	# 		print("")
-	# 		print("")
-	# 		print("")
+	if opcao == 3:
+		options = webdriver.ChromeOptions()
+		options.add_experimental_option('excludeSwitches', ['enable-logging'])
+		navegador = webdriver.Chrome(options=options)
+
+		print("")
+		print("")
+
+		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
+		time.sleep(4)
+		print("")
+		print("")
+		print("")
+		print("A aplicação está consultando as cotações atuais...")
+		print("")
+		options = webdriver.ChromeOptions()
+		options.add_experimental_option('excludeSwitches', ['enable-logging'])
+
+		print("")
+		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
+
+		print("")
+		print("")
+		cotacaoUSDT = navegador.find_element("xpath",
+											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+		precoUSDT = navegador.find_element("xpath",
+										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+		marketcapUSDT = navegador.find_element("xpath",
+											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+		fullydilutedmarketcapUSDT = navegador.find_element("xpath",
+														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+		volume24hUSDT = navegador.find_element("xpath",
+											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+		print(precoUSDT.text)
+		print(cotacaoUSDT.text)
+		print("")
+		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
+		print(marketcapUSDT.text, '     ', fullydilutedmarketcapUSDT.text, '     ', volume24hUSDT.text)
+		print("")
+		print("")
+		print("")
+
+		print('------------------------------')
+		print("")
+		print("")
+
+		navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
+		cotacaoPAXG = navegador.find_element("xpath",
+											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+		precoPAXG = navegador.find_element("xpath",
+										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+		marketcapPAXG = navegador.find_element("xpath",
+											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+		fullydilutedmarketcapPAXG = navegador.find_element("xpath",
+														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+		volume24hPAXG = navegador.find_element("xpath",
+											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+
+		print('Preço de PAX Gold (PAXG)')
+		print(cotacaoPAXG.text)
+		print("")
+		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
+		print(marketcapPAXG.text, '     ', fullydilutedmarketcapPAXG.text, '            ', volume24hPAXG.text)
+		print("")
+		print("")
+		print("")
 
 
 	# carteiras
@@ -1776,20 +1778,5 @@ ID de rede classe dhcp, IPv6 permitidas para o adaptador com conexão segura e p
 		print("")
 
 
-	if opcao == 3:
-		print("")
-		print("")
-		print("")
-		print("")
-		print("A aplicação está consultando as cotações atuais...")
-		print("")
-
-		# As coordenadas X e Y variam conforma a resolução
-		# Para descobrir as coordenadas do cursor do mouse usar:
-		pyautogui.PAUSE = 2
-
-		pyautogui.click(button="right", x=4052, y=1061)
-		pyautogui.click(x=4067, y=868)
-		time.sleep(5)
-		print(pyautogui.position())
+	
 
