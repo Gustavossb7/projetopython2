@@ -7,8 +7,8 @@ from selenium import webdriver
 
 
 
-senha1= 'da'.lower()
-autenticacao1 = 1
+senha1= '0codigoNietzsche'
+autenticacao1 = 3301
 
 def leiaSenha(msg):
 	ok = False
@@ -430,7 +430,7 @@ while True:
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
-									for c in range(1, 4):
+									for c in range(1, 60):
 										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
@@ -439,18 +439,18 @@ while True:
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total,3)
-									for c in range(1, 4):
+									for c in range(1, 60):
 										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
 
-								for c in range(1,1):
+								for c in range(1,ta1):
 									print('Confirmação de rede pendende (0/3):  PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 									time.sleep(1.5)
-								for c in range(1,2):
+								for c in range(1,ta2):
 									print('Confirmação de rede pendende (1/3):  PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 									time.sleep(1.5)
-								for c in range(1,3):
+								for c in range(1,ta3):
 									print('Confirmação de rede pendende (2/3): PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
 									time.sleep(1.5)
 								print('Confirmação de rede pendende (3/3): PROTOCOLO -',''.join(random.SystemRandom().choices(string.ascii_letters, k = 7)))
@@ -1644,7 +1644,8 @@ Adaptador de Rede sem Fio Wi-Fi:
 		print("")
 		print("")
 		print(
-			"O sistema possui segurança de encriptografamento de padrão Advanced Encryption Standard (AES), ID de rede classe dhcp, IPv6 permitidas para o adaptador com conexão segura e protocolos de segurança WEP e WPA")
+			'''O sistema possui segurança de encriptografamento de padrão Advanced Encryption Standard (AES), 
+ID de rede classe dhcp, IPv6 permitidas para o adaptador com conexão segura e protocolos de segurança WEP e WPA''')
 		print("")
 		print('''
 	Wired Equivalent Privacy  (Privacidade equivalente aos fios) WEP é um sistema de criptografia adotado pelo padrão IEEE 802.11. 
@@ -1672,13 +1673,13 @@ Adaptador de Rede sem Fio Wi-Fi:
 	# 	print("")
 	# 	print("A aplicação está consultando as cotações atuais...")
 	# 	print("")
-	# 
-	# 
+	#
+	#
 	# 	navegador = webdriver.Chrome()
 	# 	print("")
 	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
-	# 
-	# 
+	#
+	#
 	# 	print("")
 	# 	print("")
 	# 	cotacaoUSDT=navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
@@ -1694,18 +1695,18 @@ Adaptador de Rede sem Fio Wi-Fi:
 	# 	print("")
 	# 	print("")
 	# 	print("")
-	# 
+	#
 	# 	print('------------------------------')
 	# 	print("")
 	# 	print("")
-	# 
+	#
 	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
 	# 	cotacaoPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
 	# 	precoPAXG = navegador.find_element("xpath",'// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
 	# 	marketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
 	# 	fullydilutedmarketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
 	# 	volume24hPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
-	# 
+	#
 	# 	print('Preço de PAX Gold (PAXG)')
 	# 	print(cotacaoPAXG.text)
 	# 	print("")
@@ -1714,7 +1715,6 @@ Adaptador de Rede sem Fio Wi-Fi:
 	# 	print("")
 	# 	print("")
 	# 	print("")
-
 
 
 
