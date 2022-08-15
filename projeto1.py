@@ -3,6 +3,7 @@ import random
 import string
 import math
 from selenium import webdriver
+import pyautogui
 
 
 
@@ -17,7 +18,7 @@ def leiaSenha(msg):
 		if senha == senha1 :
 			ok = True
 		else:
-			print('\033[0;31mERRO! Digite a senha válida\033[m')
+			print('ERRO! Digite a senha válida')
 		if ok:
 			break
 	return senha
@@ -29,7 +30,7 @@ def leiaAutenticacao(msg):
 		if autenticacao == autenticacao1 :
 			ok = True
 		else:
-			print('\033[0;31mERRO! Digite a autenticação válida\033[m')
+			print('ERRO! Digite a autenticação válida')
 		if ok:
 			break
 	return autenticacao
@@ -41,7 +42,7 @@ def leiaOpcao(msg):
 		if opcao == 1 or opcao == 2 or opcao == 3 or opcao == 4 or opcao == 5 or opcao == 6:
 			ok = True
 		else:
-			print('\033[0;31mERRO! Digite uma opção válida\033[m')
+			print('ERRO! Digite uma opção válida')
 		if ok:
 			break
 	return opcao
@@ -53,7 +54,7 @@ def leiaCriptografia(msg):
 		if criptografar == 'sim' or  criptografar == 'nao' or criptografar == 'não':
 			ok = True
 		else:
-			print('\033[0;31mERRO! Digite uma opção válida\033[m')
+			print('ERRO! Digite uma opção válida')
 		if ok:
 			break
 	return criptografar
@@ -65,7 +66,7 @@ def leiaNcarteira(msg):
 		if ncarteira == 1 or ncarteira == 2 or ncarteira == 3 or ncarteira == 4 or ncarteira == 5 or ncarteira == 6 :
 			ok = True
 		else:
-			print('\033[0;31mERRO! Digite uma opção válida\033[m')
+			print('ERRO! Digite uma opção válida')
 		if ok:
 			break
 	return ncarteira
@@ -126,6 +127,8 @@ autenticacao = leiaAutenticacao('Digite sua autenticação: ')
 print('')
 print('Etapa de verificação credencial de autenticação concluida com sucesso.')
 print('')
+print('')
+print('')
 print('Bem vindo Matheus')
 print('')
 
@@ -142,7 +145,7 @@ while True:
 	print('')
 	opcao = leiaOpcao('Digite o número da opção que deseja: ')
 
-
+	# rede
 	if opcao == 1:
 			print(' ')
 			print('''Adaptador Ethernet Ethernet:
@@ -200,7 +203,160 @@ while True:
 				print("Não foi possível fazer o login")
 
 
+	# informações rede
 	if opcao == 2:
+		print("")
+		print("Informações de rede: ")
+		print("")
+		print("")
+		print("")
+		print("")
+		print("O sistema possui ID de rede classe dhcp e IPv6 permitidas para o adaptador ")
+		print("")
+		print('''
+	Possuimos uma rede padrão que exibe apenas o endereço IP, a máscara de sub-rede e
+	o gateway padrão para cada adaptador limitado ao TCP/IP.
+	Para Release e Renew, se nenhum nome de adaptador for especificado,
+	as concessões de endereços IP para todos os adaptadores limitados
+	ao TCP/IP serão liberadas ou renovadas.
+
+	Para Setclassid e Setclassid6, se nenhuma ClassId for especificada, ClassId
+	será removida.''')
+		time.sleep(1.5)
+		print("")
+		print("")
+		print('''
+	Nome do host. . . . . . . . . . . . . . . . : DESKTOP-F2UG63E
+	   Sufixo DNS primário . . . . . . . . . . . . :
+	   Tipo de nó. . . . . . . . . . . . . . . . . : híbrido
+	   Roteamento de IP ativado. . . . . . . . . . : não
+	   Proxy WINS ativado. . . . . . . . . . . . . : não
+	   Lista de pesquisa de sufixo DNS . . . . . . : virtua.com.br
+
+	Adaptador Ethernet Ethernet:
+
+	   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+	   Sufixo DNS específico de conexão. . . . . . :
+	   Descrição . . . . . . . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+	   Endereço Físico . . . . . . . . . . . . . . : A8-A1-59-79-9F-9F
+	   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+	   Configuração Automática Habilitada. . . . . : Sim
+
+	Adaptador de Rede sem Fio Conexão Local* 9:
+
+	   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+	   Sufixo DNS específico de conexão. . . . . . :
+	   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+	   Endereço Físico . . . . . . . . . . . . . . : 2A-EE-52-BC-E0-C1
+	   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+	   Configuração Automática Habilitada. . . . . : Sim''')
+		time.sleep(2)
+		print('''
+	Adaptador de Rede sem Fio Conexão Local* 10:
+
+	   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+	   Sufixo DNS específico de conexão. . . . . . :
+	   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+	   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
+	   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+	   Configuração Automática Habilitada. . . . . : Sim
+
+	Adaptador de Rede sem Fio Wi-Fi:
+
+	   Sufixo DNS específico de conexão. . . . . . : virtua.com.br
+	   Descrição . . . . . . . . . . . . . . . . . : TP-Link Wireless USB Adapter
+	   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
+	   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+	   Configuração Automática Habilitada. . . . . : Sim
+	   Endereço IPv6 . . . . . . . . . . : 2804:14d:4cd1:84a0::504a(Preferencial)
+	   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:36
+	   Concessão Expira. . . . . . . . . . . . . . : terça-feira, 16 de agosto de 2022 16:10:20
+	   Endereço IPv6 de link local . . . . . . . . : fe80::858:6458:4e62:469%19(Preferencial)
+	   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.219(Preferencial)
+	   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+	   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:41
+	   Concessão Expira. . . . . . . . . . . . . . : sábado, 13 de agosto de 2022 04:10:31
+	   Gateway Padrão. . . . . . . . . . . . . . . : fe80::ce75:e2ff:fed8:4fca%19
+	                                                 192.168.0.1
+	   Servidor DHCP . . . . . . . . . . . . . . . : 192.168.0.1
+	   IAID de DHCPv6. . . . . . . . . . . . . . . : 405335634
+	   DUID de Cliente DHCPv6. . . . . . . . . . . : 00-01-00-01-2A-76-4F-9E-A8-A1-59-79-9F-9F
+	   Servidores DNS. . . . . . . . . . . . . . . : 2804:14d:1:0:181:213:132:4
+	                                                 2804:14d:1:0:181:213:132:5
+	                                                 181.213.132.4
+	                                                 181.213.132.5
+	   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado''')
+		print("")
+		print("")
+
+
+	# cotação
+	# if opcao == 3:
+	# 		print("")
+	# 		print("")
+	# 		navegador = webdriver.Chrome()
+	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
+	# 		time.sleep(3)
+	# 		print("")
+	# 		print("")
+	# 		print("A aplicação está consultando as cotações atuais...")
+	# 		print("")
+	# 		options = webdriver.ChromeOptions()
+	# 		options.add_experimental_option('excludeSwitches', ['enable-logging'])
+	#
+	# 		navegador = webdriver.Chrome()
+	# 		print("")
+	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
+	#
+	# 		print("")
+	# 		print("")
+	# 		cotacaoUSDT = navegador.find_element("xpath",
+	# 											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+	# 		precoUSDT = navegador.find_element("xpath",
+	# 										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+	# 		marketcapUSDT = navegador.find_element("xpath",
+	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+	# 		fullydilutedmarketcapUSDT = navegador.find_element("xpath",
+	# 														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+	# 		volume24hUSDT = navegador.find_element("xpath",
+	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+	# 		print(precoUSDT.text)
+	# 		print(cotacaoUSDT.text)
+	# 		print("")
+	# 		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
+	# 		print(marketcapUSDT.text, '     ', fullydilutedmarketcapUSDT.text, '     ', volume24hUSDT.text)
+	# 		print("")
+	# 		print("")
+	# 		print("")
+	#
+	# 		print('------------------------------')
+	# 		print("")
+	# 		print("")
+	#
+	# 		navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
+	# 		cotacaoPAXG = navegador.find_element("xpath",
+	# 											 '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
+	# 		precoPAXG = navegador.find_element("xpath",
+	# 										   '// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
+	# 		marketcapPAXG = navegador.find_element("xpath",
+	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
+	# 		fullydilutedmarketcapPAXG = navegador.find_element("xpath",
+	# 														   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
+	# 		volume24hPAXG = navegador.find_element("xpath",
+	# 											   '//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
+	#
+	# 		print('Preço de PAX Gold (PAXG)')
+	# 		print(cotacaoPAXG.text)
+	# 		print("")
+	# 		print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
+	# 		print(marketcapPAXG.text, '     ', fullydilutedmarketcapPAXG.text, '            ', volume24hPAXG.text)
+	# 		print("")
+	# 		print("")
+	# 		print("")
+
+
+	# carteiras
+	if opcao == 4:
 			print('''	Carteiras dísponíveis:
 			Carteira R1
 			Carteira R2
@@ -314,15 +470,18 @@ while True:
 							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
-							confirmar = leiaCriptografia(
-								'''		
-                            O valor de taxa de é {} PAXG.
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format( na1, na2, na3, la1, na4, na5, na6, na7, na8,
 																  la2, la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
+							O valor de taxa de é {} PAXG.
+							Digite sim, para confirmar:'''.format(taxaPaxg2))
+
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo1 = saldo1 - valor
 								if destino == 1:
@@ -400,13 +559,15 @@ while True:
 												saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 
 						else:
-							confirmar = leiaCriptografia(
-								'''		
+							print(
+								'''	
+                            ERC-20 Transaction: Tax pending.
+                            Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
 							O valor de taxa de é {} PAXG.
-							ERC-20 Transaction: Tax pending.
-							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxaPaxg,na1,na2,na3,la1,na4,na5,na6,na7,na8,la2,la3))
+							Digite sim, para confirmar:'''.format(taxaPaxg))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo1 = saldo1 -valor
 								if destino == 1:
@@ -509,14 +670,17 @@ while True:
 							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
-							confirmar = leiaCriptografia(
-								'''		
-                            O valor de taxa de é {} PAXG.
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,
+																   la2, la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
+							O valor de taxa de é {} PAXG.
+							Digite sim, para confirmar:'''.format(taxaPaxg2))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo2 = saldo2 - valor
 								if destino == 1:
@@ -595,14 +759,16 @@ while True:
 											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 
 						else:
-							confirmar = leiaCriptografia(
-								'''		
+							print(
+								'''	
+                            ERC-20 Transaction: Tax pending.
+                            Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+																   la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
 							O valor de taxa de é {} PAXG.
-							ERC-20 Transaction: Tax pending.
-							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
-																  la3))
+							Digite sim, para confirmar:'''.format(taxaPaxg))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo2 = saldo2 - valor
 								if destino == 1:
@@ -720,14 +886,17 @@ while True:
 							 67.16942])
 						print('')
 						if destino == 5 or destino == 6:
-							confirmar = leiaCriptografia(
-								'''		
-                            O valor de taxa de é {} PAXG.
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,
+																   la2, la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
+							O valor de taxa de é {} PAXG.
+							Digite sim, para confirmar:'''.format(taxaPaxg2))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo3 = saldo3 - valor
 								if destino == 1:
@@ -805,90 +974,91 @@ while True:
 										'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
 											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 						else:
-							confirmar = leiaCriptografia(
-								'''		
-							O valor de taxa de é {} PAXG.
-							ERC-20 Transaction: Tax pending.
-							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
-																  la3))
-							if confirmar == 'sim'.upper().lower().strip():
-								saldo3 = saldo3 - valor
-								if destino == 1:
-									saldo1 = saldo1 + valor - taxaPaxg
-									real1 = float(saldo1 * 9097.38)
-									al1 = round((100 * real1) / total, 3)
-								if destino == 2:
-									saldo2 = saldo2 + valor - taxaPaxg
-									real2 = float(saldo2 * 9097.38)
-									al2 = round((100 * real2) / total, 3)
-								if destino == 3:
-									saldo3 = saldo3 + valor - taxaPaxg
-									real3 = float(saldo3 * 9097.38)
-									al3 = round((100 * real3) / total, 3)
-								if destino == 4:
-									saldo4 = saldo4 + valor - taxaPaxg
-									real4 = float(saldo4 * 9097.38)
-									al4 = round((100 * real4) / total, 3)
-								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
-									real5 = (saldo5 * 5.07)
-									saldo5 = round(saldo5, 5)
-									al5 = round((100 * real5) / total, 3)
-									for c in range(1, 60):
+									print(
+										'''	
+                                    ERC-20 Transaction: Tax pending.
+                                    Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                                    ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,la2,la3))
+									time.sleep(3)
+									confirmar = leiaCriptografia('''
+									O valor de taxa de é {} PAXG.
+									Digite sim, para confirmar:'''.format(taxaPaxg))
+									if confirmar == 'sim'.upper().lower().strip():
+										saldo3 = saldo3 - valor
+										if destino == 1:
+											saldo1 = saldo1 + valor - taxaPaxg
+											real1 = float(saldo1 * 9097.38)
+											al1 = round((100 * real1) / total, 3)
+										if destino == 2:
+											saldo2 = saldo2 + valor - taxaPaxg
+											real2 = float(saldo2 * 9097.38)
+											al2 = round((100 * real2) / total, 3)
+										if destino == 3:
+											saldo3 = saldo3 + valor - taxaPaxg
+											real3 = float(saldo3 * 9097.38)
+											al3 = round((100 * real3) / total, 3)
+										if destino == 4:
+											saldo4 = saldo4 + valor - taxaPaxg
+											real4 = float(saldo4 * 9097.38)
+											al4 = round((100 * real4) / total, 3)
+										if destino == 5:
+											saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
+											real5 = (saldo5 * 5.07)
+											saldo5 = round(saldo5, 5)
+											al5 = round((100 * real5) / total, 3)
+											for c in range(1, 60):
+												print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+										if destino == 6:
+											saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
+											real6 = (saldo6 * 5.07)
+											saldo6 = round(saldo6, 5)
+											al6 = round((100 * real6) / total, 3)
+											for c in range(1, 60):
+												print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+
+									for c in range(1, ta1):
 										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
-								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
-									real6 = (saldo6 * 5.07)
-									saldo6 = round(saldo6, 5)
-									al6 = round((100 * real6) / total, 3)
-									for c in range(1, 60):
-										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+									for c in range(1, ta2):
+										print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
 											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 										time.sleep(1.5)
+									for c in range(1, ta3):
+										print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
+									print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 
-								for c in range(1, ta1):
-									print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta2):
-									print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta3):
-									print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
-								if destino == 1:
-									print(
-										'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 2:
-									print(
-										'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 3:
-									print(
-										'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 4:
-									print(
-										'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 5:
-									print(
-										'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 6:
-									print(
-										'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 1:
+										print(
+											'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 2:
+										print(
+											'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 3:
+										print(
+											'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 4:
+										print(
+											'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 5:
+										print(
+											'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 6:
+										print(
+											'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 					else:
 						print('Processo Finalizado')
 
@@ -921,14 +1091,17 @@ while True:
 							 0.021119023841, 0.022372391771, 0.039284750228, 0.030672705062, 0.037388547043])
 						print('')
 						if destino == 5 or destino == 6:
-							confirmar = leiaCriptografia(
-								'''		
-                            O valor de taxa de é {} PAXG.
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaPaxg2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,
+																   la2, la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
+							O valor de taxa de é {} PAXG.
+							Digite sim, para confirmar:'''.format(taxaPaxg2))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo4 = saldo4 - valor
 								if destino == 1:
@@ -949,9 +1122,6 @@ while True:
 									al4 = round((100 * real4) / total, 3)
 								if destino == 5:
 									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
 									real5 = (saldo5 * 5.07)
 									saldo5 = round(saldo5, 5)
 									al5 = round((100 * real5) / total, 3)
@@ -961,9 +1131,6 @@ while True:
 										time.sleep(1.5)
 								if destino == 6:
 									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
 									real6 = (saldo6 * 5.07)
 									saldo6 = round(saldo6, 5)
 									al6 = round((100 * real6) / total, 3)
@@ -1013,97 +1180,93 @@ while True:
 										'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
 											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 						else:
-							confirmar = leiaCriptografia(
-								'''		
-							O valor de taxa de é {} PAXG.
-							ERC-20 Transaction: Tax pending.
-							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxaPaxg, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
-																  la3))
-							if confirmar == 'sim'.upper().lower().strip():
-								saldo4 = saldo4 - valor
-								if destino == 1:
-									saldo1 = saldo1 + valor - taxaPaxg
-									real1 = float(saldo1 * 9097.38)
-									al1 = round((100 * real1) / total, 3)
-								if destino == 2:
-									saldo2 = saldo2 + valor - taxaPaxg
-									real2 = float(saldo2 * 9097.38)
-									al2 = round((100 * real2) / total, 3)
-								if destino == 3:
-									saldo3 = saldo3 + valor - taxaPaxg
-									real3 = float(saldo3 * 9097.38)
-									al3 = round((100 * real3) / total, 3)
-								if destino == 4:
-									saldo4 = saldo4 + valor - taxaPaxg
-									real4 = float(saldo4 * 9097.38)
-									al4 = round((100 * real4) / total, 3)
-								if destino == 5:
-									saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
-									real5 = (saldo5 * 5.07)
-									saldo5 = round(saldo5, 5)
-									al5 = round((100 * real5) / total, 3)
-									for c in range(1, 60):
-										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-										time.sleep(1.5)
-								if destino == 6:
-									saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
-									print('')
-									print("Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
-									real6 = (saldo6 * 5.07)
-									saldo6 = round(saldo6, 5)
-									al6 = round((100 * real6) / total, 3)
-									for c in range(1, 60):
-										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-										time.sleep(1.5)
+									print(
+										'''	
+                                    ERC-20 Transaction: Tax pending.
+                                    Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                                    ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,
+																		   la2, la3))
+									time.sleep(3)
+									confirmar = leiaCriptografia('''
+									O valor de taxa de é {} PAXG.
+									Digite sim, para confirmar:'''.format(taxaPaxg))
+									if confirmar == 'sim'.upper().lower().strip():
+										saldo4 = saldo4 - valor
+										if destino == 1:
+											saldo1 = saldo1 + valor - taxaPaxg
+											real1 = float(saldo1 * 9097.38)
+											al1 = round((100 * real1) / total, 3)
+										if destino == 2:
+											saldo2 = saldo2 + valor - taxaPaxg
+											real2 = float(saldo2 * 9097.38)
+											al2 = round((100 * real2) / total, 3)
+										if destino == 3:
+											saldo3 = saldo3 + valor - taxaPaxg
+											real3 = float(saldo3 * 9097.38)
+											al3 = round((100 * real3) / total, 3)
+										if destino == 4:
+											saldo4 = saldo4 + valor - taxaPaxg
+											real4 = float(saldo4 * 9097.38)
+											al4 = round((100 * real4) / total, 3)
+										if destino == 5:
+											saldo5 = saldo5 + (valor * 1794) - taxaPaxg2
+											real5 = (saldo5 * 5.07)
+											saldo5 = round(saldo5, 5)
+											al5 = round((100 * real5) / total, 3)
+											for c in range(1, 60):
+												print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+										if destino == 6:
+											saldo6 = saldo6 + (valor * 1794) - taxaPaxg2
+											real6 = (saldo6 * 5.07)
+											saldo6 = round(saldo6, 5)
+											al6 = round((100 * real6) / total, 3)
+											for c in range(1, 60):
+												print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
 
 
-								for c in range(1, ta1):
-									print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta2):
-									print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta3):
-									print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											for c in range(1, ta1):
+												print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+											for c in range(1, ta2):
+												print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+											for c in range(1, ta3):
+												print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+													  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+												time.sleep(1.5)
+											print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
 
-								if destino == 1:
-									print(
-										'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 2:
-									print(
-										'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 3:
-									print(
-										'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 4:
-									print(
-										'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 5:
-									print(
-										'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 6:
-									print(
-										'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 1:
+												print(
+													'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 2:
+												print(
+													'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 3:
+												print(
+													'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 4:
+												print(
+													'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 5:
+												print(
+													'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+											if destino == 6:
+												print(
+													'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+														saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
 					else:
 						print('Processo Finalizado')
 
@@ -1135,23 +1298,22 @@ while True:
 							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
 							 67.16942])
 						print('')
-						if destino == 1 or destino == 2:
-							confirmar = leiaCriptografia(
-								'''
-                            O valor de taxa de é {} USDT.
+						if destino == 1 or destino == 2 or destino == 3 or destino == 4:
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
                             Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaUsdt2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+																   la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
+							O valor de taxa de é {} USDT.
+							Digite sim, para confirmar:'''.format(taxaUsdt2))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo5 = saldo5 - valor
 								if destino == 1:
 									saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
-									print('')
-									print(
-										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
 									real1 = float(saldo1 * 9097.38)
 									al1 = round((100 * real1) / total, 3)
 									for c in range(1, 60):
@@ -1160,10 +1322,6 @@ while True:
 										time.sleep(1.5)
 								if destino == 2:
 									saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
-									print('')
-									print(
-										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
 									real2 = float(saldo2 * 9097.38)
 									al2 = round((100 * real2) / total, 3)
 									for c in range(1, 60):
@@ -1174,10 +1332,18 @@ while True:
 									saldo3 = saldo3 + valor - taxaUsdt
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
+									for c in range(1, 60):
+										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
 								if destino == 4:
 									saldo4 = saldo4 + valor - taxaUsdt
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
+									for c in range(1, 60):
+										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
 								if destino == 5:
 									saldo5 = saldo5 + valor - taxaUsdt
 									real5 = (saldo5 * 5.07)
@@ -1230,13 +1396,16 @@ while True:
 
 						else:
 
+							print(
+								'''	
+                            ERC-20 Transaction: Tax pending.
+                            Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+																   la3))
+							time.sleep(3)
 							confirmar = leiaCriptografia('''
-									O valor de taxa de é {} USDT.
-									ERC-20 Transaction: Tax pending.
-									Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-									ID: {}{}{}{}{}{}{}{}{}-{}{}
-									Digite sim, para confirmar:'''.format(taxaUsdt, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
-																	  la3))
+							O valor de taxa de é {} USDT.
+							Digite sim, para confirmar:'''.format(taxaUsdt))
 							if confirmar == 'sim'.upper().lower().strip():
 									saldo5 = saldo5 - valor
 									if destino == 1:
@@ -1259,10 +1428,18 @@ while True:
 										saldo3 = saldo3 + valor - taxaUsdt
 										real3 = float(saldo3 * 9097.38)
 										al3 = round((100 * real3) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
 									if destino == 4:
 										saldo4 = saldo4 + valor - taxaUsdt
 										real4 = float(saldo4 * 9097.38)
 										al4 = round((100 * real4) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
 									if destino == 5:
 										saldo5 = saldo5 + valor - taxaUsdt
 										real5 = (saldo5 * 5.07)
@@ -1343,104 +1520,113 @@ while True:
 							[25.41013, 36.41005, 63.033228, 32.902384, 40.40544, 55.07471, 61.91639, 27.45124, 49.73885,
 							 67.16942])
 						print('')
-						if destino == 1 or destino == 2:
-							confirmar = leiaCriptografia(
-								'''		
-                            O valor de taxa de é {} USDT.
+						if destino == 1 or destino == 2 or destino == 3 or destino == 4:
+								print(
+									'''	
+                                ERC-20 Transaction: Tax pending.
+                                Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
+                                Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
+                                ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
+								time.sleep(3)
+								confirmar = leiaCriptografia('''
+								O valor de taxa de é {} USDT.
+								Digite sim, para confirmar:'''.format(taxaUsdt2))
+
+								if confirmar == 'sim'.upper().lower().strip():
+									saldo6 = saldo6 - valor
+									if destino == 1:
+										saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
+										real1 = float(saldo1 * 9097.38)
+										al1 = round((100 * real1) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
+									if destino == 2:
+										saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
+										real2 = float(saldo2 * 9097.38)
+										al2 = round((100 * real2) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
+									if destino == 3:
+										saldo3 = saldo3 + valor - taxaUsdt
+										real3 = float(saldo3 * 9097.38)
+										al3 = round((100 * real3) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
+									if destino == 4:
+										saldo4 = saldo4 + valor - taxaUsdt
+										real4 = float(saldo4 * 9097.38)
+										al4 = round((100 * real4) / total, 3)
+										for c in range(1, 60):
+											print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+												  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+											time.sleep(1.5)
+									if destino == 5:
+										saldo5 = saldo5 + valor - taxaUsdt
+										real5 = (saldo5 * 5.07)
+										saldo5 = round(saldo5, 5)
+										al5 = round((100 * real5) / total, 3)
+									if destino == 6:
+										saldo6 = saldo6 + valor - taxaUsdt
+										real6 = (saldo6 * 5.07)
+										saldo6 = round(saldo6, 5)
+										al6 = round((100 * real6) / total, 3)
+
+									for c in range(1, ta1):
+										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
+									for c in range(1, ta2):
+										print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
+									for c in range(1, ta3):
+										print('Confirmação de rede pendende (2/3): PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
+									print('Confirmação de rede pendende (3/3): PROTOCOLO -',
+										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+
+									if destino == 1:
+										print(
+											'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 2:
+										print(
+											'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 3:
+										print(
+											'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 4:
+										print(
+											'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 5:
+										print(
+											'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+									if destino == 6:
+										print(
+											'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
+												saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
+						else:
+							print(
+								'''	
                             ERC-20 Transaction: Tax pending.
                             Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-                            Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK).
-                            ID: {}{}{}{}{}{}{}{}{}-{}{}
-                            Digite sim, para confirmar:'''.format(taxaUsdt2, na1, na2, na3, la1, na4, na5, na6, na7, na8,la2, la3))
-							if confirmar == 'sim'.upper().lower().strip():
-								saldo6 = saldo6 - valor
-								if destino == 1:
-									saldo1 = saldo1 + (valor / 1794) - taxaUsdt2
-									real1 = float(saldo1 * 9097.38)
-									al1 = round((100 * real1) / total, 3)
-									for c in range(1, 60):
-										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-										time.sleep(1.5)
-								if destino == 2:
-									saldo2 = saldo2 + (valor / 1794) - taxaUsdt2
-									print('')
-									print(
-										"Conversão será feita automaticamente via protocolo crosschain (1 INCH NETWORK)")
-									print('')
-									real2 = float(saldo2 * 9097.38)
-									al2 = round((100 * real2) / total, 3)
-									for c in range(1, 60):
-										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-										time.sleep(1.5)
-								if destino == 3:
-									saldo3 = saldo3 + valor - taxaUsdt
-									real3 = float(saldo3 * 9097.38)
-									al3 = round((100 * real3) / total, 3)
-								if destino == 4:
-									saldo4 = saldo4 + valor - taxaUsdt
-									real4 = float(saldo4 * 9097.38)
-									al4 = round((100 * real4) / total, 3)
-								if destino == 5:
-									saldo5 = saldo5 + valor - taxaUsdt
-									real5 = (saldo5 * 5.07)
-									saldo5 = round(saldo5, 5)
-									al5 = round((100 * real5) / total, 3)
-								if destino == 6:
-									saldo6 = saldo6 + valor - taxaUsdt
-									real6 = (saldo6 * 5.07)
-									saldo6 = round(saldo6, 5)
-									al6 = round((100 * real6) / total, 3)
-
-								for c in range(1, ta1):
-									print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta2):
-									print('Confirmação de rede pendende (1/3):  PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								for c in range(1, ta3):
-									print('Confirmação de rede pendende (2/3): PROTOCOLO -',
-										  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-									time.sleep(1.5)
-								print('Confirmação de rede pendende (3/3): PROTOCOLO -',
-									  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
-
-								if destino == 1:
-									print(
-										'O saldo da carteira R1 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo1, al1, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 2:
-									print(
-										'O saldo da carteira R2 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo2, al2, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 3:
-									print(
-										'O saldo da carteira R3 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo3, al3, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 4:
-									print(
-										'O saldo da carteira R4 é {} em PAXG, Status: Chaves ativas sob gerenciamento, Tipo: Reserva, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo4, al4, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 5:
-									print(
-										'O saldo da carteira I1 é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Intermediaria, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo5, al5, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-								if destino == 6:
-									print(
-										'O saldo da carteira FTX é {} em USDT, Status: Chaves ativas sob gerenciamento, Tipo: Corretora, AL: {}%, ID: {}{}{}{}{}{}{}{}{}-{}{}'.format(
-											saldo6, al6, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2, la3))
-						else:
-							confirmar = leiaCriptografia(
-								'''		
+                            ID: {}{}{}{}{}{}{}{}{}-{}{} '''.format(na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
+																   la3))
+							time.sleep(3)
+							confirmar = leiaCriptografia('''
 							O valor de taxa de é {} USDT.
-							ERC-20 Transaction: Tax pending.
-							Aviso: Taxa de gás inclui crosschain dinâmico proporcional ao gás.
-							ID: {}{}{}{}{}{}{}{}{}-{}{}
-							Digite sim, para confirmar:'''.format(taxaUsdt, na1, na2, na3, la1, na4, na5, na6, na7, na8, la2,
-																  la3))
+							Digite sim, para confirmar:'''.format(taxaUsdt))
 							if confirmar == 'sim'.upper().lower().strip():
 								saldo6 = saldo6 - valor
 								if destino == 1:
@@ -1463,10 +1649,18 @@ while True:
 									saldo3 = saldo3 + valor - taxaUsdt
 									real3 = float(saldo3 * 9097.38)
 									al3 = round((100 * real3) / total, 3)
+									for c in range(1, 60):
+										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
 								if destino == 4:
 									saldo4 = saldo4 + valor - taxaUsdt
 									real4 = float(saldo4 * 9097.38)
 									al4 = round((100 * real4) / total, 3)
+									for c in range(1, 60):
+										print('Confirmação de rede pendende (0/3):  PROTOCOLO -',
+											  ''.join(random.SystemRandom().choices(string.ascii_letters, k=7)))
+										time.sleep(1.5)
 								if destino == 5:
 									saldo5 = saldo5 + valor - taxaUsdt
 									real5 = (saldo5 * 5.07)
@@ -1520,123 +1714,39 @@ while True:
 					else:
 						print('Processo Finalizado')
 
-	#informações criptografia
-	if opcao == 3:
-		print("")
-		print("Informações de criptografia: ")
-		print("")
-		print("")
-		print("")
-		print("")
-		print("O sistema possui capacidade de encriptografamento de padrão Advanced Encryption Standard (AES) ")
-		print("")
-		print('''
-Possuimos uma criptografia assimétrica que possui HASHs de segurança, 
-e uma cifra de fluxo (stream cipher), pois é um dos melhores e mais 
-seguros protocolos de criptografia e é utilizado em incontáveis aplicações.''')
-		print("")
-		print("")
-		print('''
-A tecnologia utilizada na criptografia são protocolos Secure Socket Layer (SSL),
-hoje conhecido como Transport Layer Security (TLS), 
-Derivada do DES, a criptografia 3DES (ou Triplo DES).''')
-		print("")
-		print("")
-		criptousuario=str(input("Digite uma mensagem que gostaria que fosse encriptografada: "))
-		print("")
-		print("Sua mensagem encriptografada ficou: ")
-		print("")
-		print(criptografia(criptousuario))
-		print("")
 
-	# informações rede
-	if opcao == 4:
+	# informações criptografia
+	if opcao == 5:
 			print("")
-			print("Informações de rede: ")
-			print("")
-			print("")
+			print("Informações de criptografia: ")
 			print("")
 			print("")
-			print("O sistema possui ID de rede classe dhcp e IPv6 permitidas para o adaptador ")
+			print("")
+			print("")
+			print("O sistema possui capacidade de encriptografamento de padrão Advanced Encryption Standard (AES) ")
 			print("")
 			print('''
-Possuimos uma rede padrão que exibe apenas o endereço IP, a máscara de sub-rede e
-o gateway padrão para cada adaptador limitado ao TCP/IP.
-Para Release e Renew, se nenhum nome de adaptador for especificado,
-as concessões de endereços IP para todos os adaptadores limitados
-ao TCP/IP serão liberadas ou renovadas.
-
-Para Setclassid e Setclassid6, se nenhuma ClassId for especificada, ClassId
-será removida.''')
-			time.sleep(1.5)
+		Possuimos uma criptografia assimétrica que possui HASHs de segurança, 
+		e uma cifra de fluxo (stream cipher), pois é um dos melhores e mais 
+		seguros protocolos de criptografia e é utilizado em incontáveis aplicações.''')
 			print("")
 			print("")
 			print('''
-Nome do host. . . . . . . . . . . . . . . . : DESKTOP-F2UG63E
-   Sufixo DNS primário . . . . . . . . . . . . :
-   Tipo de nó. . . . . . . . . . . . . . . . . : híbrido
-   Roteamento de IP ativado. . . . . . . . . . : não
-   Proxy WINS ativado. . . . . . . . . . . . . : não
-   Lista de pesquisa de sufixo DNS . . . . . . : virtua.com.br
-
-Adaptador Ethernet Ethernet:
-
-   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
-   Sufixo DNS específico de conexão. . . . . . :
-   Descrição . . . . . . . . . . . . . . . . . : Realtek PCIe GbE Family Controller
-   Endereço Físico . . . . . . . . . . . . . . : A8-A1-59-79-9F-9F
-   DHCP Habilitado . . . . . . . . . . . . . . : Sim
-   Configuração Automática Habilitada. . . . . : Sim
-
-Adaptador de Rede sem Fio Conexão Local* 9:
-
-   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
-   Sufixo DNS específico de conexão. . . . . . :
-   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
-   Endereço Físico . . . . . . . . . . . . . . : 2A-EE-52-BC-E0-C1
-   DHCP Habilitado . . . . . . . . . . . . . . : Sim
-   Configuração Automática Habilitada. . . . . : Sim''')
-			time.sleep(2)
-			print('''
-Adaptador de Rede sem Fio Conexão Local* 10:
-
-   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
-   Sufixo DNS específico de conexão. . . . . . :
-   Descrição . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
-   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
-   DHCP Habilitado . . . . . . . . . . . . . . : Sim
-   Configuração Automática Habilitada. . . . . : Sim
-
-Adaptador de Rede sem Fio Wi-Fi:
-
-   Sufixo DNS específico de conexão. . . . . . : virtua.com.br
-   Descrição . . . . . . . . . . . . . . . . . : TP-Link Wireless USB Adapter
-   Endereço Físico . . . . . . . . . . . . . . : 28-EE-52-BC-E0-C1
-   DHCP Habilitado . . . . . . . . . . . . . . : Sim
-   Configuração Automática Habilitada. . . . . : Sim
-   Endereço IPv6 . . . . . . . . . . : 2804:14d:4cd1:84a0::504a(Preferencial)
-   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:36
-   Concessão Expira. . . . . . . . . . . . . . : terça-feira, 16 de agosto de 2022 16:10:20
-   Endereço IPv6 de link local . . . . . . . . : fe80::858:6458:4e62:469%19(Preferencial)
-   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.219(Preferencial)
-   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
-   Concessão Obtida. . . . . . . . . . . . . . : quinta-feira, 11 de agosto de 2022 15:55:41
-   Concessão Expira. . . . . . . . . . . . . . : sábado, 13 de agosto de 2022 04:10:31
-   Gateway Padrão. . . . . . . . . . . . . . . : fe80::ce75:e2ff:fed8:4fca%19
-                                                 192.168.0.1
-   Servidor DHCP . . . . . . . . . . . . . . . : 192.168.0.1
-   IAID de DHCPv6. . . . . . . . . . . . . . . : 405335634
-   DUID de Cliente DHCPv6. . . . . . . . . . . : 00-01-00-01-2A-76-4F-9E-A8-A1-59-79-9F-9F
-   Servidores DNS. . . . . . . . . . . . . . . : 2804:14d:1:0:181:213:132:4
-                                                 2804:14d:1:0:181:213:132:5
-                                                 181.213.132.4
-                                                 181.213.132.5
-   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado''')
+		A tecnologia utilizada na criptografia são protocolos Secure Socket Layer (SSL),
+		hoje conhecido como Transport Layer Security (TLS), 
+		Derivada do DES, a criptografia 3DES (ou Triplo DES).''')
 			print("")
 			print("")
+			criptousuario = str(input("Digite uma mensagem que gostaria que fosse encriptografada: "))
+			print("")
+			print("Sua mensagem encriptografada ficou: ")
+			print("")
+			print(criptografia(criptousuario))
+			print("")
+
 
 	# informações protocolo de segurança
-	if opcao == 5:
+	if opcao == 6:
 		print("")
 		print("Informações Protodolo de segurança: ")
 		print("")
@@ -1648,74 +1758,38 @@ Adaptador de Rede sem Fio Wi-Fi:
 ID de rede classe dhcp, IPv6 permitidas para o adaptador com conexão segura e protocolos de segurança WEP e WPA''')
 		print("")
 		print('''
-	Wired Equivalent Privacy  (Privacidade equivalente aos fios) WEP é um sistema de criptografia adotado pelo padrão IEEE 802.11. 
-	Ele utiliza uma senha compartilhada para criptografar os dados e funciona de forma estática. 
-	Além de fornecer apenas um controle de acesso e de privacidade de dados na rede sem fio.
-			''')
+		Wired Equivalent Privacy  (Privacidade equivalente aos fios) WEP é um sistema de criptografia adotado pelo padrão IEEE 802.11. 
+		Ele utiliza uma senha compartilhada para criptografar os dados e funciona de forma estática. 
+		Além de fornecer apenas um controle de acesso e de privacidade de dados na rede sem fio.
+				''')
 		print("")
 		print("")
 		print('''
-	Wi-fi Protected Access  (Wi-Fi de acesso protegido) Também é conhecido como TKIP (Temporal Key Integrity Protocol). 
-	O recurso surgiu em 2003 para aumentar a segurança do protocolo WEP. O WPA2 é considerada a versão final o WPA. 
-	A principal diferença entre o WPA e o WPA2 é a forma com a qual ele criptografa os dados. 
-	Enquanto o WPA utiliza o TKIP como algoritmo de criptografia, o WPA2 utiliza o algoritmo AES (Advanced Encryption Standard). 
-	O algoritmo AES é consideravelmente mais pesado que o TKIP. 
-	Por conta disso, as placas mais antigas não suportam o WPA2, nem com um firmware atualizado.
-	O AES é o padrão de criptografia utilizado''')
+		Wi-fi Protected Access  (Wi-Fi de acesso protegido) Também é conhecido como TKIP (Temporal Key Integrity Protocol). 
+		O recurso surgiu em 2003 para aumentar a segurança do protocolo WEP. O WPA2 é considerada a versão final o WPA. 
+		A principal diferença entre o WPA e o WPA2 é a forma com a qual ele criptografa os dados. 
+		Enquanto o WPA utiliza o TKIP como algoritmo de criptografia, o WPA2 utiliza o algoritmo AES (Advanced Encryption Standard). 
+		O algoritmo AES é consideravelmente mais pesado que o TKIP. 
+		Por conta disso, as placas mais antigas não suportam o WPA2, nem com um firmware atualizado.
+		O AES é o padrão de criptografia utilizado''')
 		print("")
 		print("")
 
 
-	# if opcao == 6:
-	# 	print("")
-	# 	print("")
-	# 	print("")
-	# 	print("")
-	# 	print("A aplicação está consultando as cotações atuais...")
-	# 	print("")
-	#
-	#
-	# 	navegador = webdriver.Chrome()
-	# 	print("")
-	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/tether/")
-	#
-	#
-	# 	print("")
-	# 	print("")
-	# 	cotacaoUSDT=navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
-	# 	precoUSDT = navegador.find_element("xpath",'// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
-	# 	marketcapUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
-	# 	fullydilutedmarketcapUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
-	# 	volume24hUSDT = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
-	# 	print(precoUSDT.text)
-	# 	print (cotacaoUSDT.text)
-	# 	print("")
-	# 	print("Market Cap",   '         '    ,"Fully Diluted Market Cap", '     ' ,"Volume 24h")
-	# 	print(marketcapUSDT.text, '     '   , fullydilutedmarketcapUSDT.text, '     '    , volume24hUSDT.text)
-	# 	print("")
-	# 	print("")
-	# 	print("")
-	#
-	# 	print('------------------------------')
-	# 	print("")
-	# 	print("")
-	#
-	# 	navegador.get("https://coinmarketcap.com/pt-br/currencies/pax-gold/")
-	# 	cotacaoPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
-	# 	precoPAXG = navegador.find_element("xpath",'// *[ @ id = "__next"] / div / div[1] / div[2] / div / div[1] / div[2] / div / div[2] / h1')
-	# 	marketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div[2]/div')
-	# 	fullydilutedmarketcapPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div')
-	# 	volume24hPAXG = navegador.find_element("xpath",'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div[3]/div[1]/div[3]/div[1]/div[2]/div')
-	#
-	# 	print('Preço de PAX Gold (PAXG)')
-	# 	print(cotacaoPAXG.text)
-	# 	print("")
-	# 	print("Market Cap", '         ', "Fully Diluted Market Cap", '     ', "Volume 24h")
-	# 	print(marketcapPAXG.text, '     ', fullydilutedmarketcapPAXG.text, '            ', volume24hPAXG.text)
-	# 	print("")
-	# 	print("")
-	# 	print("")
+	if opcao == 3:
+		print("")
+		print("")
+		print("")
+		print("")
+		print("A aplicação está consultando as cotações atuais...")
+		print("")
 
+		# As coordenadas X e Y variam conforma a resolução
+		# Para descobrir as coordenadas do cursor do mouse usar:
+		pyautogui.PAUSE = 2
 
-
+		pyautogui.click(button="right", x=4052, y=1061)
+		pyautogui.click(x=4067, y=868)
+		time.sleep(5)
+		print(pyautogui.position())
 
