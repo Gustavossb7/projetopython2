@@ -8,6 +8,7 @@ import pyperclip
 from socket import gethostbyname, create_connection
 import string
 from random import randint
+import subprocess
 
 def random_letter():
     alphabet = list(string.ascii_letters)
@@ -181,6 +182,7 @@ def conectadoInternet():
 
 
 laco = True
+laco1 = True
 laco2 = True
 
 print('')
@@ -230,112 +232,136 @@ while laco == True:
 
             # automação rede
             if opcao == 1:
-                print("")
-                print("")
-                print("Informações de rede: ")
-                print("")
-                print("")
-                time.sleep(2)
-                print("O sistema possui ID de rede classe dhcp e IPv6 permitidas para o adaptador ")
-                print("")
-                print('''
-                        Possuimos uma rede padrão que exibe apenas o endereço IP, a máscara de sub-rede e
-                        o gateway padrão para cada adaptador limitado ao TCP/IP.
-                        Para Release e Renew, se nenhum nome de adaptador for especificado,
-                        as concessões de endereços IP para todos os adaptadores limitados
-                        ao TCP/IP serão liberadas ou renovadas.
+                laco1 = True
+                while laco1 == True:
+                    conectadoInternet1 = conectadoInternet()
+                    if conectadoInternet1 == False:
+                        print('')
+                        print('Por favor, verifique sua conexão com a internet')
+                        print('')
+                        numeroconexao = int(input("Quando estiver conectado digite 1: "))
+                    else:
+                        laco1 = False
+                        print("")
+                        print("")
+                        print("Informações de rede: ")
+                        print("")
+                        print("")
+                        time.sleep(2)
+                        print("O sistema possui ID de rede classe dhcp e IPv6 permitidas para o adaptador ")
+                        print("")
+                        print('''
+                                Possuimos uma rede padrão que exibe apenas o endereço IP, a máscara de sub-rede e
+                                o gateway padrão para cada adaptador limitado ao TCP/IP.
+                                Para Release e Renew, se nenhum nome de adaptador for especificado,
+                                as concessões de endereços IP para todos os adaptadores limitados
+                                ao TCP/IP serão liberadas ou renovadas.
+        
+                                Para Setclassid e Setclassid6, se nenhuma ClassId for especificada, ClassId
+                                será removida.''')
+                        print("")
+                        # pyautogui.press("win")
+                        # pyautogui.write('cmd')
+                        # pyautogui.press("enter")
+                        # time.sleep(1)
+                        # pyperclip.copy('ipconfig')
+                        # time.sleep(1)
+                        # comando = pyperclip.paste()
+                        # pyautogui.write(comando)
+                        # pyautogui.press("enter")
+                        # pyautogui.press("f11")
+                        # time.sleep(2)
+                        # pyautogui.leftClick(x=473, y=437)
+                        # pyautogui.keyDown('shift')
+                        # pyautogui.leftClick(x=7, y=71)
+                        # pyautogui.keyUp('shift')
+                        # pyautogui.hotkey('ctrl', 'c')
+                        # textoRede = pyperclip.paste()
+                        # time.sleep(5)
+                        #
+                        # pyautogui.click(x=117, y=476)
+                        # pyperclip.copy('netsh wlan show drivers')
+                        # time.sleep(1)
+                        # comando2 = pyperclip.paste()
+                        # pyautogui.write(comando2)
+                        # pyautogui.press("enter")
+                        # time.sleep(3)
+                        # pyautogui.leftClick(x=1, y=471)
+                        # pyautogui.keyDown('shift')
+                        # pyautogui.leftClick(x=628, y=1017)
+                        # pyautogui.keyUp('shift')
+                        # pyautogui.hotkey('ctrl', 'c')
+                        # textoRede2 = pyperclip.paste()
+                        # pyautogui.press("f11")
+                        # time.sleep(1)
+                        # pyautogui.click(x=868, y=1065)
+                        # time.sleep(1)
+                        # pyautogui.click(x=800, y=990)
 
-                        Para Setclassid e Setclassid6, se nenhuma ClassId for especificada, ClassId
-                        será removida.''')
-                print("")
-                pyautogui.press("win")
-                pyautogui.write('cmd')
-                pyautogui.press("enter")
-                time.sleep(1)
-                pyperclip.copy('ipconfig')
-                time.sleep(1)
-                comando = pyperclip.paste()
-                pyautogui.write(comando)
-                pyautogui.press("enter")
-                pyautogui.press("f11")
-                time.sleep(2)
-                pyautogui.leftClick(x=473, y=437)
-                pyautogui.keyDown('shift')
-                pyautogui.leftClick(x=7, y=71)
-                pyautogui.keyUp('shift')
-                pyautogui.hotkey('ctrl', 'c')
-                textoRede = pyperclip.paste()
-                time.sleep(5)
+                        time.sleep(2)
+                        print('Carregando automações...')
+                        print('')
+                        print('')
+                        print('')
+                        print('')
+                        time.sleep(3)
 
-                pyautogui.click(x=117, y=476)
-                pyperclip.copy('netsh wlan show drivers')
-                time.sleep(1)
-                comando2 = pyperclip.paste()
-                pyautogui.write(comando2)
-                pyautogui.press("enter")
-                time.sleep(3)
-                pyautogui.leftClick(x=1, y=471)
-                pyautogui.keyDown('shift')
-                pyautogui.leftClick(x=628, y=1017)
-                pyautogui.keyUp('shift')
-                pyautogui.hotkey('ctrl', 'c')
-                textoRede2 = pyperclip.paste()
-                pyautogui.press("f11")
-                time.sleep(1)
-                pyautogui.click(x=868, y=1065)
-                time.sleep(1)
-                pyautogui.click(x=800, y=990)
+                        # -*- coding: utf-8 -*-
+                        subprocess.run(["ipconfig"])
+                        print('')
+                        print('')
+                        print('')
+                        print('')
+                        time.sleep(3)
+                        print('')
+                        print('')
+                        print('')
+                        subprocess.call("netsh wlan show drivers")
 
-                time.sleep(2)
-                print('Carregando automações...')
-                print('')
-                print('')
-                print('')
-                print('')
-                time.sleep(3)
-                print(textoRede)
-                print('')
-                print('')
-                print('')
-                print('')
-                print('')
-                print('')
-                time.sleep(3)
-                print(textoRede2)
+                        # print(textoRede)
+                        # print('')
+                        # print('')
+                        # print('')
+                        # print('')
+                        # print('')
+                        # print('')
+                        # time.sleep(3)
+                        # print(textoRede2)
 
-                print('')
-                print('')
-                print('')
-                print('')
-                time.sleep(3)
-                print(' ')
-                print(' ')
-                print('A rede não possui segurança a nível de criptografia de ponta a ponta. ')
-                print(' ')
+                        print('')
+                        print('')
+                        print('')
+                        print('')
+                        time.sleep(3)
+                        print(' ')
+                        print(' ')
+                        print('A rede não possui segurança a nível de criptografia de ponta a ponta. ')
+                        print(' ')
 
-                criptografar = leiaCriptografia(
-                    'Deseja criptografar a conexão do programa, assim criando um a canal seguro? ')
+                        criptografar = leiaCriptografia(
+                            'Deseja criptografar a conexão do programa, assim criando um a canal seguro? ')
 
-                if criptografar == 'sim'.upper().lower():
-                    print('')
-                    print(' ')
-                    print('''
-                                        JDxK4ZlvptmPYmK3LmYd3QoSFXpHI4FBYOQJ2GBG7LrBz4lOODYq291W7lSnraA-dXOO
-                                        u1JjP8Lsusb5jP6NyYkUFDlCBCs4Rixcx2IKhOB88opiTEBQHyTfNf2XDjDORLlaFjOlLaxr2nxnQ
-                                        juydnq0zRsmF0m83JqQbNkcUmPTwzuVxVQ5MXnHoyjtRlxk0eR3OmKwtmG_Re5q9BYPpZQ7mepTZp
-                                        DJ6fkJMfqYdtS_n_RH43E3Bw_LM3K90qOR''')
-                print(' ')
+                        if criptografar == 'sim'.upper().lower():
+                            print('')
+                            print(' ')
+                            print('''
+                                                JDxK4ZlvptmPYmK3LmYd3QoSFXpHI4FBYOQJ2GBG7LrBz4lOODYq291W7lSnraA-dXOO
+                                                u1JjP8Lsusb5jP6NyYkUFDlCBCs4Rixcx2IKhOB88opiTEBQHyTfNf2XDjDORLlaFjOlLaxr2nxnQ
+                                                juydnq0zRsmF0m83JqQbNkcUmPTwzuVxVQ5MXnHoyjtRlxk0eR3OmKwtmG_Re5q9BYPpZQ7mepTZp
+                                                DJ6fkJMfqYdtS_n_RH43E3Bw_LM3K90qOR''')
+                        print(' ')
 
-                if criptografar == 'não'.upper().lower():
-                    print('')
-                    print("Não foi possível fazer o login")
+                        if criptografar == 'não'.upper().lower():
+                            print('')
+                            print("Não foi possível fazer o login")
 
-                if criptografar == 'nao'.upper().lower():
-                    print('')
-                    print("Não foi possível fazer o login")
+                        if criptografar == 'nao'.upper().lower():
+                            print('')
+                            print("Não foi possível fazer o login")
 
             # cotação
             if opcao == 2:
+                laco2 = True
                 while laco2 == True:
                     conectadoInternet1 = conectadoInternet()
                     if conectadoInternet1 == False:
