@@ -9,6 +9,10 @@ from socket import gethostbyname, create_connection
 import string
 from random import randint
 import subprocess
+import socket
+from datetime import datetime
+
+
 
 def random_letter():
     alphabet = list(string.ascii_letters)
@@ -48,7 +52,7 @@ def leiaOpcao(msg):
     ok = False
     while True:
         opcao = int(input(msg))
-        if opcao == 1 or opcao == 2 or opcao == 3 or opcao == 4 or opcao == 5:
+        if opcao == 1 or opcao == 2 or opcao == 3 or opcao == 4 or opcao == 5 or opcao == 6:
             ok = True
         else:
             print('ERRO! Digite uma opção válida')
@@ -213,6 +217,8 @@ while laco == True:
         print('')
         print('Etapa de verificação credencial de autenticação concluida com sucesso.')
         print('')
+        print('')
+        print("Acess",socket.gethostname(),"   ", datetime.now(), "imported")
         print('')
         print('')
         print('Bem vindo Matheus')
@@ -3266,3 +3272,31 @@ while laco == True:
                 O AES é o padrão de criptografia utilizado''')
                 print("")
                 print("")
+
+            # Log out
+            if opcao == 6:
+                time.sleep(2)
+                print("Desconectando da rede...")
+                time.sleep(4)
+                print('')
+                print('')
+                print("Fazendo checagem de segurança...")
+                time.sleep(4)
+                print('')
+                print('')
+                print('')
+                print("Fazendo Log out...")
+                time.sleep(4)
+                print('')
+                print('3')
+                time.sleep(3)
+                print('')
+                time.sleep(3)
+                print('2')
+                time.sleep(3)
+                print('')
+                print('1')
+                time.sleep(1.5)
+                print('')
+                print("Log out feito com sucesso.")
+                break
